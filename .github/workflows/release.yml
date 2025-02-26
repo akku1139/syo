@@ -25,10 +25,10 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: pnpm
 
-      # - name: Build
-      #   run: |
-      #     pnpm install
-      #     pnpm build
+      - name: Build
+        run: |
+          pnpm install
+          pnpm build
 
       - name: Publish to npm
         id: publishable
