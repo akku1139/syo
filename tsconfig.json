@@ -29,7 +29,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     //"erasableSyntaxOnly": true, // TypeScript 5.8
-    "isolatedDeclarations": true,
+    "isolatedDeclarations": false, // Valibot schema
 
     "skipLibCheck": false,
     "types": [
