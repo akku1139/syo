@@ -2,6 +2,8 @@ import * as v from "valibot"
 
 export const ConfigSchema =v.object({
   title: v.string(),
+  description: v.nullish(v.string()),
+  lang: v.nullish(v.string()),
   srcDir: v.nullish(v.string(), "docs"),
   distDir: v.nullish(v.string(), "docs-dist"),
 })
