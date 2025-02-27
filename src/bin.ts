@@ -1,11 +1,9 @@
-import * as fs from "node:fs/promises"
 import * as path from "node:path"
 import * as process from "node:process"
 import { fileURLToPath } from "node:url"
 import * as v from "valibot"
 import { ConfigSchema } from "./config.ts"
-
-import { markdownProcessor } from "./source/markdown.ts"
+import { build } from "./build.ts"
 
 const p = (target: string) => path.resolve(process.cwd(), target)
 
@@ -16,15 +14,6 @@ const config = v.parse( ConfigSchema,
 
 console.log("config:", config)
 
-fs.rm("docs-dist", { recursive: true, force: true })
-
-for await (const entry of fs.glob("docs/**/*.md")) {
-  const distFilename = entry.replace(/^docs\//, "docs-dist/").replace(/\.md$/, ".html")
-  console.log("file:", entry)
-  const file = (await fs.readFile(entry)).toString()
-  const html = await markdownProcessor(file)
-  await fs.mkdir(path.dirname(distFilename), { recursive: true })
-  await fs.writeFile(distFilename, html)
-}
+await build(config)
 
 console.log("build!")
