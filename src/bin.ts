@@ -19,14 +19,12 @@ console.log("config:", config)
 fs.rm("docs-dist", { recursive: true, force: true })
 
 for await (const entry of fs.glob("docs/**/*.md")) {
-  console.log("file:", entry)
+  const distFilename = entry.replace(/^docs\//, "docs/").replace(/\.md$/, ".html")
+  console.log("file:", entry, "dist:", distFilename)
   const file = await fs.readFile(entry)
   const html = (await markdownProcessor.process(file)).toString()
-  await fs.mkdir(path.dirname(entry), { recursive: true })
-  await fs.writeFile(
-    entry.replace(/^docs\//, "docs/").replace(/\.md$/, ".html"),
-    html
-  )
+  await fs.mkdir(path.dirname(distFilename), { recursive: true })
+  await fs.writeFile(distFilename, html)
 }
 
 console.log("build!")
