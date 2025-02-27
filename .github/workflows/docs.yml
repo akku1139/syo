@@ -1,15 +1,16 @@
-name: Release
+name: Docs
 
 on:
   push:
     branches: [main]
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
 
     steps:
       - uses: actions/checkout@v4
@@ -55,6 +56,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Send ping to blogmura
-        run: "curl ${{ secrets.BLOGMURA_PING_URL }}"

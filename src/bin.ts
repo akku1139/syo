@@ -7,9 +7,11 @@ import { ConfigSchema } from "./config.ts"
 
 import { markdownProcessor } from "./source/markdown.ts"
 
-const configFilePath = path.resolve(process.cwd(), "syo.config.js")
+const p = (target: string) => path.resolve(process.cwd(), target)
+
+const configFilePath = p("syo.config.js")
 const config = v.parse( ConfigSchema,
-  (await import(fileURLToPath(new URL(configFilePath, import.meta.url))).catch(() => ({}))).default ?? {} as unknown
+  await import(fileURLToPath(new URL(configFilePath, import.meta.url))) as unknown
 )
 
 fs.rm(path.resolve(process.cwd(), "docs-dist"), { recursive: true, force: true })
@@ -19,7 +21,10 @@ for await (const entry of fs.glob("docs/**/*.md")) {
   const file = await fs.readFile(entry)
   const html = await markdownProcessor.process(file)
   await fs.mkdir(path.dirname(entry), { recursive: true })
-  await fs.writeFile()
+  await fs.writeFile(
+    entry.replace(/^docs\//, "docs/").replace(/\.md$/, ".html"),
+    html
+  )
 }
 
 console.log("build!")
