@@ -31,6 +31,10 @@
     //"erasableSyntaxOnly": true, // TypeScript 5.8
     "isolatedDeclarations": false, // Valibot schema
 
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "./dist", // fake
+
     "skipLibCheck": false,
     "types": [
       "node"

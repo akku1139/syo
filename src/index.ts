@@ -1,1 +1,3 @@
-export {}
+export {
+  defineConfig
+} from "./config.ts"
