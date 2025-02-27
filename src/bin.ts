@@ -11,10 +11,12 @@ const p = (target: string) => path.resolve(process.cwd(), target)
 
 const configFilePath = p("syo.config.js")
 const config = v.parse( ConfigSchema,
-  await import(fileURLToPath(new URL(configFilePath, import.meta.url))) as unknown
+  (await import(fileURLToPath(new URL(configFilePath, import.meta.url)))).default as unknown
 )
 
-fs.rm(path.resolve(process.cwd(), "docs-dist"), { recursive: true, force: true })
+console.log("config:", config)
+
+fs.rm("docs-dist", { recursive: true, force: true })
 
 for await (const entry of fs.glob("docs/**/*.md")) {
   console.log("file:", entry)
