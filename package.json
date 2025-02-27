@@ -33,7 +33,6 @@
     }
   },
   "dependencies": {
-    "rehype-pretty-code": "^0.14.0",
     "rehype-stringify": "^10.0.1",
     "rehype-twoslash": "^1.1.1",
     "remark-parse": "^11.0.0",
