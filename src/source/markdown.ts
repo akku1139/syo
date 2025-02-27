@@ -1,7 +1,7 @@
 import { unified } from "unified"
 import markdown from "remark-parse"
 import remark2rehype from "remark-rehype"
-import rehypeTwoslash from 'rehype-twoslash'
+import rehypeTwoslash from "rehype-twoslash"
 // import rehypePrettyCode from "rehype-pretty-code"
 import rehypeStringify from "rehype-stringify"
 import type { SourceProcessor } from "../types.ts"
