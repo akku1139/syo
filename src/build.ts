@@ -31,7 +31,7 @@ export const build = async (config: Config): Promise<void> => {
 <link rel="stylesheet" type="text/css" href="https://esm.sh/github-markdown-css@5/github-markdown-light.css">
 <style>
 .markdown-body pre {
-overflow: unset !important;
+overflow: unset !important; /* fix twoslash */
 }
 </style>
 </head>
