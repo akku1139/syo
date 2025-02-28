@@ -26,7 +26,7 @@ export const build = async (config: Config): Promise<void> => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${escapeHTML(html.title)}</title>
+<title>${escapeHTML(html.title)} - ${escapeHTML(config.title)}</title>
 <link rel="stylesheet" type="text/css" href="https://esm.sh/@wooorm/starry-night@3/style/both.css">
 <link rel="stylesheet" type="text/css" href="https://esm.sh/github-markdown-css@5/github-markdown.css">
 </head>
