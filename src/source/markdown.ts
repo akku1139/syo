@@ -14,7 +14,7 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
       }
       if(token.type === "code" && typeof token.lang === "string" ) {
         const l = token.lang.split(" ")
-        const lang = l[0]
+        const lang = l[0] ?? ""
 
         // https://github.com/bent10/marked-extensions/blob/dc2b53f4067418ec71ea0e75f07d2ac7af05219b/packages/shiki/src/index.ts#L52-L57
         // transforms token to html
@@ -25,7 +25,7 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
             lang,
             theme: "vitesse-dark",
             transformers: [
-              ...(l[1] === "twoslash" && transformerTwoslash())
+              ...(l[1] === "twoslash" ? transformerTwoslash() : [])
             ]
           })
         })
