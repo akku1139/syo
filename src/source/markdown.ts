@@ -23,7 +23,7 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
           block: true,
           text: await codeToHtml(token.text, {
             lang,
-            theme: "vitesse-dark",
+            theme: "github-light",
             transformers: [
               ...(l[1] === "twoslash" ? [transformerTwoslash()] : [])
             ]
