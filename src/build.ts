@@ -4,6 +4,11 @@ import { type Config } from "./config.ts"
 
 import { markdownProcessor } from "./source/markdown.ts"
 
+const writeFile = async (filename: string, content: string) => {
+  await fs.mkdir(path.dirname(filename), { recursive: true })
+  await fs.writeFile(filename, content)
+}
+
 export const build = async (config: Config): Promise<void> => {
   const srcDir = config.srcDir ?? "docs"
   const distDir = config.distDir ?? "docs-dist"
@@ -11,11 +16,26 @@ export const build = async (config: Config): Promise<void> => {
   fs.rm(distDir, { recursive: true, force: true })
 
   for await (const entry of fs.glob(`${srcDir}/**/*.md`)) {
-    const distFilename = entry.replace(new RegExp(`^${srcDir}/`), `${distDir}/`).replace(/\.md$/, ".html")
     console.log("file:", entry)
     const file = (await fs.readFile(entry)).toString()
     const html = await markdownProcessor(file)
-    await fs.mkdir(path.dirname(distFilename), { recursive: true })
-    await fs.writeFile(distFilename, html)
+    await writeFile(entry.replace(new RegExp(`^${srcDir}/`), `${distDir}/`).replace(/\.md$/, ".html"),
+`<!DOCTYPE html>
+<html${config.lang ? `lang="${config.lang}"` : ""}>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Title</title>
+</head>
+<body>${html}</body>
+</html>
+`
+    )
+    await writeFile(
+      entry.replace(new RegExp(`^${srcDir}/`), `${distDir}/_assets/page/`).replace(/\.md$/, ".json"),
+      JSON.stringify({
+        content: html,
+      })
+    )
   }
 }
