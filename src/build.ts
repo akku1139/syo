@@ -1,6 +1,7 @@
 import * as fs from "node:fs/promises"
 import * as path from "node:path"
 import { type Config } from "./config.ts"
+import { escapeHTML } from "./utils/escape.ts"
 
 import { markdownProcessor } from "./source/markdown.ts"
 
@@ -21,23 +22,21 @@ export const build = async (config: Config): Promise<void> => {
     const html = await markdownProcessor(file)
     await writeFile(entry.replace(new RegExp(`^${srcDir}/`), `${distDir}/`).replace(/\.md$/, ".html"),
 `<!DOCTYPE html>
-<html${config.lang ? `lang="${config.lang}"` : ""}>
+<html${config.lang ? `lang="${escapeHTML(config.lang)}"` : ""}>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Title</title>
+<title>${escapeHTML(html.title)}</title>
 <link rel="stylesheet" type="text/css" href="https://esm.sh/@wooorm/starry-night@3/style/both.css">
 <link rel="stylesheet" type="text/css" href="https://esm.sh/github-markdown-css@5/github-markdown.css">
 </head>
-<body><main class="markdown-body">${html}</main></body>
+<body><main class="markdown-body">${html.content}</main></body>
 </html>
 `
     )
     await writeFile(
       entry.replace(new RegExp(`^${srcDir}/`), `${distDir}/_assets/page/`).replace(/\.md$/, ".json"),
-      JSON.stringify({
-        content: html,
-      })
+      JSON.stringify(html)
     )
   }
 }
