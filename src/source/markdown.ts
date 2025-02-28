@@ -13,12 +13,18 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
         title = token.text
       }
       if(token.type === "code") {
-        token.text = codeToHtml(token.text, {
-          lang: token.lang,
-          theme: "vitesse-dark",
-          transformers: [
-            transformerTwoslash(),
-          ]
+        // https://github.com/bent10/marked-extensions/blob/dc2b53f4067418ec71ea0e75f07d2ac7af05219b/packages/shiki/src/index.ts#L52-L57
+        // transforms token to html
+        Object.assign(token, {
+          type: "html",
+          block: true,
+          text: await codeToHtml(token.text, {
+            lang: token.lang,
+            theme: "vitesse-dark",
+            transformers: [
+              transformerTwoslash(),
+            ]
+          })
         })
       }
     },
