@@ -18,7 +18,7 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
         if(title === "") {
           title = token.text
         }
-        toc.push([id, text])
+        toc.push({id, title: text, depth: token.depth})
         return `<h${token.depth} id="${id}">${text}</h${token.depth}>\n`;
       }
     },
