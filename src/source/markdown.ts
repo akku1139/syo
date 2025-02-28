@@ -25,7 +25,7 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
             lang,
             theme: "vitesse-dark",
             transformers: [
-              ...(l[1] === "twoslash" ? transformerTwoslash() : [])
+              ...(l[1] === "twoslash" ? [transformerTwoslash()] : [])
             ]
           })
         })
