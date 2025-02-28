@@ -1,17 +1,28 @@
 import { codeToHtml } from "shiki"
 import { transformerTwoslash } from "@shikijs/twoslash"
-import type { SourceProcessor } from "../types.ts"
+import type { PageData, SourceProcessor } from "../types.ts"
 import { Marked } from "marked"
+import { escapeHTML } from "../utils/escape.ts"
 
 export const markdownProcessor: SourceProcessor = async (source: string) => {
   let title: string = ""
+  const toc: PageData["toc"] = []
+
   const marked = new Marked({
     async: true,
     gfm: true,
-    async walkTokens(token) {
-      if(token.type === "heading" && token.depth === 1) {
-        title = token.text
+    renderer: {
+      heading(token) {
+        const text = this.parser.parseInline(token.tokens)
+        const id = escapeHTML(text.replaceAll(" ", "-"))
+        if(title === "") {
+          title = token.text
+        }
+        toc.push([id, text])
+        return `<h${token.depth} id="${id}">${text}</h${token.depth}>\n`;
       }
+    },
+    async walkTokens(token) {
       if(token.type === "code" && typeof token.lang === "string" ) {
         const l = token.lang.split(" ")
         const lang = l[0] ?? ""
@@ -32,9 +43,8 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
       }
     },
   })
+
   const content = await marked.parse(source)
 
-  return {
-    content, title
-  }
+  return { content, title, toc }
 }

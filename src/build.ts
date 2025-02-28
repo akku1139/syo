@@ -35,7 +35,11 @@ overflow: unset !important;
 }
 </style>
 </head>
-<body><main class="markdown-body">${html.content}</main></body>
+<body>
+<!-- <a href="#_main" >Skip to content</a> -->
+<div>${html.toc.map(e => `<a href="#${e[0]}>${escapeHTML(e[1])}</a>`).join("")}</div>
+<main id="_main" class="markdown-body">${html.content}</main>
+</body>
 </html>
 `
     )
