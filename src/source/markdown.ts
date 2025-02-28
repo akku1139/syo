@@ -46,5 +46,5 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
 
   const content = await marked.parse(source)
 
-  return { content, title, toc }
+  return { content, title, toc, layout: "doc" }
 }

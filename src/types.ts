@@ -6,6 +6,7 @@ export type PageData = {
     depth: number
   }>
   content: string
+  layout: "doc"
 }
 
 export type SourceProcessor = (sourceText: string) => PageData | Promise<PageData>

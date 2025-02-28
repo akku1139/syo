@@ -44,7 +44,7 @@ overflow: unset !important; /* fix twoslash */
 `
     )
     await writeFile(
-      entry.replace(new RegExp(`^${srcDir}/`), `${distDir}/_assets/page/`).replace(/\.md$/, ".json"),
+      entry.replace(new RegExp(`^${srcDir}/`), `${distDir}/_syo/page/`).replace(/\.md$/, ".json"),
       JSON.stringify(html)
     )
   }
