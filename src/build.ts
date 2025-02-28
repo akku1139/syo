@@ -29,6 +29,11 @@ export const build = async (config: Config): Promise<void> => {
 <title>${escapeHTML(html.title)} - ${escapeHTML(config.title)}</title>
 <link rel="stylesheet" type="text/css" href="https://esm.sh/@shikijs/twoslash@3.1.0/style-rich.css">
 <link rel="stylesheet" type="text/css" href="https://esm.sh/github-markdown-css@5/github-markdown-light.css">
+<style>
+.markdown-body pre {
+overflow: unset !important;
+}
+</style>
 </head>
 <body><main class="markdown-body">${html.content}</main></body>
 </html>
