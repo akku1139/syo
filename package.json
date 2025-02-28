@@ -37,7 +37,6 @@
     "rehype-twoslash": "^1.1.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.1",
-    "shiki": "^3.0.0",
     "unified": "^11.0.5",
     "valibot": "1.0.0-rc.2"
   },
