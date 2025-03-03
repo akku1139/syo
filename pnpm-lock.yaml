@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@shikijs/twoslash':
         specifier: ^3.1.0
-        version: 3.1.0(typescript@5.7.3)
+        version: 3.1.0(typescript@5.8.2)
       marked:
         specifier: ^15.0.7
         version: 15.0.7
@@ -19,14 +19,14 @@ importers:
         version: 3.1.0
       valibot:
         specifier: 1.0.0-rc.3
-        version: 1.0.0-rc.3(typescript@5.7.3)
+        version: 1.0.0-rc.3(typescript@5.8.2)
     devDependencies:
       '@types/node':
         specifier: ^22.13.5
         version: 22.13.8
       typescript:
         specifier: ^5.7.3
-        version: 5.7.3
+        version: 5.8.2
 
 packages:
 
@@ -177,8 +177,8 @@ packages:
     peerDependencies:
       typescript: ^5.5.0
 
-  typescript@5.7.3:
-    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -245,12 +245,12 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.1.0
 
-  '@shikijs/twoslash@3.1.0(typescript@5.7.3)':
+  '@shikijs/twoslash@3.1.0(typescript@5.8.2)':
     dependencies:
       '@shikijs/core': 3.1.0
       '@shikijs/types': 3.1.0
-      twoslash: 0.3.1(typescript@5.7.3)
-      typescript: 5.7.3
+      twoslash: 0.3.1(typescript@5.8.2)
+      typescript: 5.8.2
     transitivePeerDependencies:
       - supports-color
 
@@ -275,10 +275,10 @@ snapshots:
 
   '@types/unist@3.0.3': {}
 
-  '@typescript/vfs@1.6.1(typescript@5.7.3)':
+  '@typescript/vfs@1.6.1(typescript@5.8.2)':
     dependencies:
       debug: 4.4.0
-      typescript: 5.7.3
+      typescript: 5.8.2
     transitivePeerDependencies:
       - supports-color
 
@@ -397,15 +397,15 @@ snapshots:
 
   twoslash-protocol@0.3.1: {}
 
-  twoslash@0.3.1(typescript@5.7.3):
+  twoslash@0.3.1(typescript@5.8.2):
     dependencies:
-      '@typescript/vfs': 1.6.1(typescript@5.7.3)
+      '@typescript/vfs': 1.6.1(typescript@5.8.2)
       twoslash-protocol: 0.3.1
-      typescript: 5.7.3
+      typescript: 5.8.2
     transitivePeerDependencies:
       - supports-color
 
-  typescript@5.7.3: {}
+  typescript@5.8.2: {}
 
   undici-types@6.20.0: {}
 
@@ -432,9 +432,9 @@ snapshots:
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
 
-  valibot@1.0.0-rc.3(typescript@5.7.3):
+  valibot@1.0.0-rc.3(typescript@5.8.2):
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
 
   vfile-message@4.0.2:
     dependencies:
