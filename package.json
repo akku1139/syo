@@ -33,6 +33,7 @@
     }
   },
   "dependencies": {
+    "@farmfe/core": "^1.6.7",
     "@shikijs/twoslash": "^3.1.0",
     "marked": "^15.0.7",
     "shiki": "^3.1.0",
