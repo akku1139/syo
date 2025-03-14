@@ -5,11 +5,12 @@ import * as fsSync from "node:fs"
 
 import { codeToHtml } from "shiki"
 import { transformerTwoslash } from "@shikijs/twoslash"
-import type { PageData } from "../types.ts"
+import type { FarmSourcePlugin, PageData, SourceProcessor } from "../types.ts"
 import { Marked } from "marked"
 import { escapeHTML } from "../utils/escape.ts"
+import { buildPageHTML } from "../utils/html.ts"
 
-const compileMarkdown = async (source: string) => {
+const compileMarkdown: SourceProcessor = async (source) => {
   let title: string = ""
   const toc: PageData["toc"] = []
 
@@ -54,7 +55,7 @@ const compileMarkdown = async (source: string) => {
   return { content, title, toc, layout: "doc" }
 }
 
-export const markdownPlugin: JsPlugin = {
+export const markdownPlugin: FarmSourcePlugin = (config) => ({
   name: "syo markdown plugin",
   load: {
     filters: { resolvedPaths: ["\\.md$"] },
@@ -75,11 +76,11 @@ export const markdownPlugin: JsPlugin = {
       moduleTypes: ["markdown"]
     },
     async executor(param, _ctx) {
-      const { content } = await compileMarkdown(param.content);
+      const content = buildPageHTML(await compileMarkdown(param.content), config)
       return {
         content,
         moduleType: "html",
       }
     }
   }
-}
+})

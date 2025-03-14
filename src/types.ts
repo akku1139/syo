@@ -1,3 +1,6 @@
+import type { JsPlugin } from "@farmfe/core"
+import type { Config } from "./config.ts"
+
 export type PageData = {
   title: string
   toc: Array<{
@@ -8,3 +11,6 @@ export type PageData = {
   content: string
   layout: "doc"
 }
+
+export type SourceProcessor = (sourceText: string) => PageData | Promise<PageData>
+export type FarmSourcePlugin = (config: Config) => JsPlugin
