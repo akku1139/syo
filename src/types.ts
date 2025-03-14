@@ -8,5 +8,3 @@ export type PageData = {
   content: string
   layout: "doc"
 }
-
-export type SourceProcessor = (sourceText: string) => PageData | Promise<PageData>

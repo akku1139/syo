@@ -1,10 +1,15 @@
+import type { JsPlugin } from "@farmfe/core"
+
+import * as fs from "node:fs/promises"
+import * as fsSync from "node:fs"
+
 import { codeToHtml } from "shiki"
 import { transformerTwoslash } from "@shikijs/twoslash"
-import type { PageData, SourceProcessor } from "../types.ts"
+import type { PageData } from "../types.ts"
 import { Marked } from "marked"
 import { escapeHTML } from "../utils/escape.ts"
 
-export const markdownProcessor: SourceProcessor = async (source: string) => {
+const compileMarkdown = async (source: string) => {
   let title: string = ""
   const toc: PageData["toc"] = []
 
@@ -47,4 +52,34 @@ export const markdownProcessor: SourceProcessor = async (source: string) => {
   const content = await marked.parse(source)
 
   return { content, title, toc, layout: "doc" }
+}
+
+export const markdownPlugin: JsPlugin = {
+  name: "syo markdown plugin",
+  load: {
+    filters: { resolvedPaths: ["\\.md$"] },
+    async executor(param) {
+      if (param.query.length === 0 && fsSync.existsSync(param.resolvedPath)) {
+        const content = (await fs.readFile(param.resolvedPath)).toString()
+        return {
+          content,
+          moduleType: "markdown",
+        }
+      }
+
+      return null
+    }
+  },
+  transform: {
+    filters: {
+      moduleTypes: ["markdown"]
+    },
+    async executor(param, _ctx) {
+      const { content } = await compileMarkdown(param.content);
+      return {
+        content,
+        moduleType: "html",
+      }
+    }
+  }
 }
