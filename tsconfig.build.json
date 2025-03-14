@@ -8,6 +8,8 @@
     "src/**/*.ts",
   ],
   "exclude": [
+    "node_modules",
+    "bin",
     "src/**/*.test.ts",
   ]
 }
