@@ -1,5 +1,3 @@
-import type { JsPlugin } from "@farmfe/core"
-
 import * as fs from "node:fs/promises"
 import * as fsSync from "node:fs"
 
