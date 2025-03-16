@@ -35,7 +35,7 @@
     "checkJs": true,
     "outDir": "./dist", // fake
 
-    "skipLibCheck": false,
+    "skipLibCheck": true, // Types do farm depend on?
     "types": [
       "node"
     ]
