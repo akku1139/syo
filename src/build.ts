@@ -8,7 +8,7 @@ import * as process from "node:process"
 export const build = async (config: Config): Promise<void> => {
   process.env.NODE_ENV = "production"
 
-  const srcDir = config.srcDir ?? "docs"
+  const srcDir = config.srcDir ?? "pages"
   // const srcs = fs.glob(`${srcDir}/**/*.md`)
   const srcs = fsSync.globSync(`${srcDir}/**/*.md`)
 
@@ -21,7 +21,7 @@ export const build = async (config: Config): Promise<void> => {
         ]
       })),
     },
-    outDir: config.distDir ?? "docs-dist",
+    outDir: config.distDir ?? "dist",
     plugins: [
       ...[markdownPlugin].map(p => p(config))
     ],
