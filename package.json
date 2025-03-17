@@ -37,7 +37,7 @@
     "@shikijs/twoslash": "^3.1.0",
     "marked": "^15.0.7",
     "shiki": "^3.1.0",
-    "valibot": "1.0.0-rc.3"
+    "valibot": "1.0.0-rc.4"
   },
   "devDependencies": {
     "@types/node": "^22.13.5",
