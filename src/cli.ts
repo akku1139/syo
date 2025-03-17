@@ -12,8 +12,4 @@ const config = v.parse( ConfigSchema,
   (await import(fileURLToPath(new URL(configFilePath, import.meta.url)))).default as unknown
 )
 
-console.log("config:", config)
-
 await build(config)
-
-console.log("build!")
