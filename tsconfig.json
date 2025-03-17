@@ -33,7 +33,7 @@
 
     "allowJs": true,
     "checkJs": true,
-    "outDir": "./dist", // fake
+    "outDir": "./dist/", // fake
 
     "skipLibCheck": true, // Types do farm depend on?
     "types": [
