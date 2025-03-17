@@ -2,7 +2,7 @@
 
 Cool and Easy documentation site generator
 
-## This is example
+## This is an example
 
 ```ts twoslash
 import * as v from "valibot"
