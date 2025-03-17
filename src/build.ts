@@ -18,10 +18,13 @@ export const build = async (config: Config): Promise<void> => {
           src,
         ]
       })),
+      output: {
+        path: config.distDir ?? "dist",
+        publicPath: config.basePath,
+      },
     },
-    outDir: config.distDir ?? "dist",
     plugins: [
-      ...[markdownPlugin].map(p => p(config))
+      ...[markdownPlugin].map(p => p(config)),
     ],
   })
 }

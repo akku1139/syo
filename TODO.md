@@ -1,7 +1,3 @@
-# BaseURL
-
-- https://www.farmfe.org/docs/config/compilation-options#outputpublicpath
-
 # id
 
 - lowercase
@@ -13,3 +9,5 @@
 # Write farm config in `syo.config.js`
 
 # `syo.config.ts`
+
+# Commandline config
