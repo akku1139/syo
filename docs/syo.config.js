@@ -1,5 +1,6 @@
 import { defineConfig } from "../src/config.ts"
 
 export default defineConfig({
-  title: "Syo"
+  title: "Syo",
+  basePath: "/syo",
 })
