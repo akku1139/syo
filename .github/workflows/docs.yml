@@ -36,6 +36,8 @@ jobs:
       - name: Build
         run: pnpm run docs
 
+      - run: find ./docs -type f | sort
+
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
