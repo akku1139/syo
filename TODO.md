@@ -22,3 +22,5 @@
 # preload css
 
 - `<link rel="preload stylesheet" href="hoge.css" as="style">`
+
+# 404 page
