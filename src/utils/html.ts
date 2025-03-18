@@ -1,6 +1,7 @@
 import { escapeHTML } from "./escape.ts"
 import type { PageData } from "../types.ts"
 import type { Config } from "../config.ts"
+import { generateHydrationScript } from "solid-js/web"
 
 export const buildPageHTML = (data: PageData, config: Config) =>
 `<!DOCTYPE html>
@@ -16,6 +17,7 @@ export const buildPageHTML = (data: PageData, config: Config) =>
 overflow: unset !important; /* fix twoslash */
 }
 </style>
+${generateHydrationScript()}
 </head>
 <body>
 <!-- <a href="#_main" >Skip to content</a> -->

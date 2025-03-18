@@ -6,7 +6,7 @@ import { transformerTwoslash } from "@shikijs/twoslash"
 import type { FarmSourcePlugin, PageData, SourceProcessor } from "../types.ts"
 import { Marked } from "marked"
 import { escapeHTML } from "../utils/escape.ts"
-import { buildPageHTML } from "../utils/html.tsx"
+import { buildPageHTML } from "../utils/html.ts"
 import { frontmatter } from "../utils/frontmatter.ts"
 
 // TODO: use solid-router
