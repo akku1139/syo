@@ -6,11 +6,11 @@ export const ConfigSchema =v.object({
   lang: v.optional(v.string()),
   srcDir: v.optional(v.string()),
   distDir: v.optional(v.string()),
-  basePath: v.optional(v.union([
-    v.string(),
-    // v.pipe(v.string(), v.startsWith("/")),
-    v.pipe(v.string(), v.url()),
-  ]))
+  // basePath: v.optional(v.union([
+  //   v.pipe(v.string(), v.endsWith("/")),
+  //   v.pipe(v.string(), v.url()),
+  // ]))
+  basePath: v.optional(v.string()),
 })
 /* Bug?
 type Config = {
