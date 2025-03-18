@@ -7,14 +7,21 @@ import type { FarmSourcePlugin, PageData, SourceProcessor } from "../types.ts"
 import { Marked } from "marked"
 import { escapeHTML } from "../utils/escape.ts"
 import { buildPageHTML } from "../utils/html.ts"
+import { frontmatter } from "../utils/frontmatter.ts"
 
 const compileMarkdown: SourceProcessor = async (source) => {
+  // TODO: title from frontmatter
   let title: string = ""
   const toc: PageData["toc"] = []
 
   const marked = new Marked({
     async: true,
     gfm: true,
+    hooks: {
+      preprocess(md) {
+        return frontmatter(md).body
+      }
+    },
     renderer: {
       heading(token) {
         const text = this.parser.parseInline(token.tokens)
