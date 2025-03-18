@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "docs": "cd docs && node ../src/cli.ts",
+    "docs": "cd docs && node ../bin/syo.js",
     "test": "pnpm run typecheck && pnpm run test:basic",
     "test:basic": "node --test",
     "typecheck": "tsc --noEmit"

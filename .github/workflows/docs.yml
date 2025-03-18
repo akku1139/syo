@@ -34,7 +34,9 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run docs
+        run: |
+          pnpm run build
+          pnpm run docs
 
       - run: find ./docs -type f | sort
 

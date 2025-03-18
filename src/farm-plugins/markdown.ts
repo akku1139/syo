@@ -6,9 +6,10 @@ import { transformerTwoslash } from "@shikijs/twoslash"
 import type { FarmSourcePlugin, PageData, SourceProcessor } from "../types.ts"
 import { Marked } from "marked"
 import { escapeHTML } from "../utils/escape.ts"
-import { buildPageHTML } from "../utils/html.ts"
+import { buildPageHTML } from "../utils/html.tsx"
 import { frontmatter } from "../utils/frontmatter.ts"
 
+// TODO: use solid-router
 const compileMarkdown: SourceProcessor = async (source) => {
   // TODO: title from frontmatter
   let title: string = ""
