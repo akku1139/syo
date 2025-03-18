@@ -7,7 +7,8 @@ export const ConfigSchema =v.object({
   srcDir: v.optional(v.string()),
   distDir: v.optional(v.string()),
   basePath: v.optional(v.union([
-    v.pipe(v.string(), v.startsWith("/")),
+    v.string(),
+    // v.pipe(v.string(), v.startsWith("/")),
     v.pipe(v.string(), v.url()),
   ]))
 })
