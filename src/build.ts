@@ -2,6 +2,7 @@ import * as fs from "node:fs/promises"
 import { type Config } from "./config.ts"
 import { build as farmBuild } from "@farmfe/core"
 import { markdownPlugin } from "./farm-plugins/markdown.ts"
+import solid from "vite-plugin-solid"
 import * as process from "node:process"
 
 export const build = async (config: Config): Promise<void> => {
@@ -25,6 +26,12 @@ export const build = async (config: Config): Promise<void> => {
     },
     plugins: [
       ...[markdownPlugin].map(p => p(config)),
+    ],
+    vitePlugins: [
+      () => ({
+        vitePlugin: solid(),
+        filters: ["\\.tsx$", "\\.jsx$"],
+      }),
     ],
   })
 }

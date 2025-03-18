@@ -33,14 +33,18 @@
     }
   },
   "dependencies": {
-    "@farmfe/core": "^1.6.7",
-    "@shikijs/twoslash": "^3.1.0",
+    "@farmfe/core": "^1.7.1",
+    "@shikijs/twoslash": "^3.2.1",
+    "@solidjs/router": "^0.15.3",
     "marked": "^15.0.7",
-    "shiki": "^3.1.0",
-    "valibot": "1.0.0-rc.4"
+    "shiki": "^3.2.1",
+    "solid-js": "^1.9.5",
+    "valibot": "1.0.0-rc.4",
+    "vite-plugin-solid": "^2.11.6",
+    "yaml": "^2.7.0"
   },
   "devDependencies": {
-    "@types/node": "^22.13.5",
-    "typescript": "^5.7.3"
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
   }
 }
