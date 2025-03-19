@@ -37,12 +37,6 @@ export const build = async (config: Config): Promise<void> => {
       routingPlugin({ config, routes }),
     ],
     vitePlugins: [
-      () => ({
-        vitePlugin: mdx({
-          jsxImportSource: "solid-js"
-        }),
-        filters: ["\\.md$", "\\.mdx$"]
-      }),
       // @farmfe/js-plugin-solid is deprecated
       // https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
       () => ({
@@ -52,7 +46,13 @@ export const build = async (config: Config): Promise<void> => {
           },
         }),
         filters: ["\\.tsx$", "\\.jsx$", "\\.md$", "\\.mdx$"],
-      })
+      }),
+      () => ({
+        vitePlugin: mdx({
+          jsxImportSource: "solid-js"
+        }),
+        filters: ["\\.md$", "\\.mdx$"]
+      }),
     ]
   })
 }
