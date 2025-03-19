@@ -1,12 +1,12 @@
 import * as fs from "node:fs/promises"
 import { type Config } from "./config.ts"
 import { build as farmBuild } from "@farmfe/core"
-import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
+// import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
 import solid from "@farmfe/js-plugin-solid"
 import * as process from "node:process"
 import type { FarmJSPlugin } from "./types.ts"
 import { routingPlugin } from "./farm-plugins/routing.ts"
-import * as path from "node:path"
+import mdx from "@mdx-js/rollup"
 
 export const build = async (config: Config): Promise<void> => {
   process.env.NODE_ENV = "production"
@@ -23,8 +23,7 @@ export const build = async (config: Config): Promise<void> => {
   await farmBuild({
     compilation: {
       input: {
-        entry: path.resolve(import.meta.dirname, "../../src/client/entry.tsx"),
-        // ...Object.fromEntries(routes.map(r => [r[0], `syo:page:${r[1]}`])),
+        ...Object.fromEntries(routes.map(r => [r[0], r[1]])),
       },
       output: {
         path: config.distDir ?? "dist",
@@ -33,17 +32,25 @@ export const build = async (config: Config): Promise<void> => {
     },
     plugins: [
       routingPlugin({ config, routes }),
-      ...([
-        markdownJSPlugin,
-      ] satisfies Array<FarmJSPlugin>).map(p => p({
-        config,
-        routes,
-      })),
+      // ...([
+      //   // markdownJSPlugin,
+      // ] satisfies Array<FarmJSPlugin>).map(p => p({
+      //   config,
+      //   routes,
+      // })),
       solid({
         solid: {
           hydratable: true,
         },
       }),
     ],
+    vitePlugins: [
+      () => ({
+        vitePlugin: mdx({
+          jsxImportSource: "solid-js"
+        }),
+        filters: ['\\.md$', '\\.mdx$']
+      })
+    ]
   })
 }

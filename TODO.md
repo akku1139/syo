@@ -32,3 +32,9 @@
 # auto reload routing
 
 # SourceMap control
+
+# use `@farmfe/plugin-mdx`
+
+- https://github.com/farm-fe/plugins/issues/124
+
+# import alias (sync with tsconfig)
