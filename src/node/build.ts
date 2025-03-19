@@ -31,6 +31,7 @@ export const build = async (config: Config): Promise<void> => {
         path: config.distDir ?? "dist",
         publicPath: config.basePath,
       },
+      presetEnv: false, // to enable, install core-js
     },
     plugins: [
       routingPlugin({ config, routes }),
