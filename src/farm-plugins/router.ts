@@ -1,6 +1,6 @@
-import type { FarmJsPlugin } from "../types.ts"
+import type { FarmJSPlugin } from "../types.ts"
 
-export const routerPlugin: FarmJsPlugin = ({ routes }) => ({
+export const routerPlugin: FarmJSPlugin = ({ routes }) => ({
   name: "syo router plugin",
   load: {
     filters: {

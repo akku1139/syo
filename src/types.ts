@@ -13,7 +13,7 @@ export type PageData = {
 }
 
 export type SourceProcessor = (sourceText: string) => PageData | Promise<PageData>
-export type FarmJsPlugin = (args: {
+export type FarmJSPlugin = (args: {
   config: Config
   /** [URL path, file name] */
   routes: Array<[

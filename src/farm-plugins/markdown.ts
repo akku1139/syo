@@ -3,7 +3,7 @@ import * as fsSync from "node:fs"
 
 import { codeToHtml } from "shiki"
 import { transformerTwoslash } from "@shikijs/twoslash"
-import type { FarmJsPlugin, PageData, SourceProcessor } from "../types.ts"
+import type { FarmJSPlugin, PageData, SourceProcessor } from "../types.ts"
 import { Marked } from "marked"
 import { escapeHTML } from "../utils/escape.ts"
 import { buildPageHTML } from "../utils/html.ts"
@@ -61,8 +61,40 @@ const compileMarkdown: SourceProcessor = async (source) => {
   return { content, title, toc, layout: "doc" }
 }
 
-export const markdownPlugin: FarmJsPlugin = ({ config }) => ({
-  name: "syo markdown plugin",
+export const markdownJSPlugin: FarmJSPlugin = ({ config }) => ({
+  name: "syo markdown to js plugin",
+  load: {
+    filters: { resolvedPaths: ["\\.md$"] },
+    async executor(param) {
+      if (param.query.length === 0 && fsSync.existsSync(param.resolvedPath)) {
+        const content = (await fs.readFile(param.resolvedPath)).toString()
+        return {
+          content,
+          moduleType: "markdown",
+        }
+      }
+
+      return null
+    }
+  },
+  transform: {
+    filters: {
+      moduleTypes: ["markdown"]
+    },
+    async executor(param, _ctx) {
+      const content = `
+      export default ${JSON.stringify(buildPageHTML(await compileMarkdown(param.content), config))}
+      `
+      return {
+        content,
+        moduleType: "js",
+      }
+    }
+  }
+})
+
+export const markdownHTMLPlugin: FarmJSPlugin = ({ config }) => ({
+  name: "syo markdown to js plugin",
   load: {
     filters: { resolvedPaths: ["\\.md$"] },
     async executor(param) {
