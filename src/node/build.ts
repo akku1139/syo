@@ -7,6 +7,7 @@ import * as process from "node:process"
 import type { FarmJSPlugin } from "./types.ts"
 import { routingPlugin } from "./farm-plugins/routing.ts"
 import mdx from "@mdx-js/rollup"
+import * as path from "node:path"
 
 export const build = async (config: Config): Promise<void> => {
   process.env.NODE_ENV = "production"
@@ -23,7 +24,8 @@ export const build = async (config: Config): Promise<void> => {
   await farmBuild({
     compilation: {
       input: {
-        ...Object.fromEntries(routes.map(r => [r[0], r[1]])),
+        // ...Object.fromEntries(routes),
+        index: path.resolve(import.meta.dirname, "../../src/client/index.html")
       },
       output: {
         path: config.distDir ?? "dist",
@@ -32,12 +34,6 @@ export const build = async (config: Config): Promise<void> => {
     },
     plugins: [
       routingPlugin({ config, routes }),
-      // ...([
-      //   // markdownJSPlugin,
-      // ] satisfies Array<FarmJSPlugin>).map(p => p({
-      //   config,
-      //   routes,
-      // })),
       solid({
         solid: {
           hydratable: true,
