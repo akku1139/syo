@@ -1,0 +1,29 @@
+diff --git a/dist/config/index.js b/dist/config/index.js
+index 0e268d9cad262289ff169bbce2b7f8a06fa37b80..e2aff207261ce580260617d648c35d93fd3d0638 100644
+--- a/dist/config/index.js
++++ b/dist/config/index.js
+@@ -96,15 +96,6 @@ export async function resolveConfig(inlineOptions = {}, mode, logger, isHandleSe
+     resolvedUserConfig.root = normalizeBasePath(resolvedUserConfig.compilation.root);
+     resolvedUserConfig.jsPlugins = sortFarmJsPlugins;
+     resolvedUserConfig.rustPlugins = rustPlugins;
+-    // Temporarily dealing with alias objects and arrays in js will be unified in rust in the future.]
+-    if (vitePlugins.length) {
+-        resolvedUserConfig.compilation.resolve.alias = getAliasEntries(resolvedUserConfig.compilation.resolve.alias);
+-    }
+-    await resolveConfigResolvedHook(resolvedUserConfig, sortFarmJsPlugins); // Fix: Await the Promise<void> and pass the resolved value to the function.
+-    // TODO Temporarily solve the problem of alias adaptation to vite
+-    if (resolvedUserConfig.compilation?.resolve?.alias && vitePlugins.length) {
+-        resolvedUserConfig.compilation.resolve.alias = transformAliasWithVite(resolvedUserConfig.compilation.resolve.alias);
+-    }
+     return resolvedUserConfig;
+ }
+ /**
+@@ -168,7 +159,7 @@ export async function normalizeUserCompilationConfig(resolvedUserConfig, userCon
+         // skip self define
+         ['FARM' + '_PROCESS_ENV']: resolvedUserConfig.env,
+         FARM_RUNTIME_TARGET_ENV: JSON.stringify(resolvedCompilation.output?.targetEnv)
+-    }, resolvedCompilation?.define, 
++    }, resolvedCompilation?.define,
+     // for node target, we should not define process.env.NODE_ENV
+     resolvedCompilation.output?.targetEnv === 'node'
+         ? {}
