@@ -64,7 +64,7 @@ const compileMarkdown: SourceProcessor = async (source) => {
 export const markdownJSPlugin: FarmJSPlugin = ({ config }) => ({
   name: "syo markdown to js plugin",
   load: {
-    filters: { resolvedPaths: ["\\.md?js$"] },
+    filters: { resolvedPaths: ["\\.md$"] },
     async executor(param) {
       if (param.query.length === 0 && fsSync.existsSync(param.resolvedPath)) {
         const content = (await fs.readFile(param.resolvedPath)).toString()
@@ -88,36 +88,6 @@ export const markdownJSPlugin: FarmJSPlugin = ({ config }) => ({
       return {
         content,
         moduleType: "js",
-      }
-    }
-  }
-})
-
-export const markdownHTMLPlugin: FarmJSPlugin = ({ config }) => ({
-  name: "syo markdown to html plugin",
-  load: {
-    filters: { resolvedPaths: ["\\.md$"] },
-    async executor(param) {
-      if (param.query.length === 0 && fsSync.existsSync(param.resolvedPath)) {
-        const content = (await fs.readFile(param.resolvedPath)).toString()
-        return {
-          content,
-          moduleType: "markdown",
-        }
-      }
-
-      return null
-    }
-  },
-  transform: {
-    filters: {
-      moduleTypes: ["markdown"]
-    },
-    async executor(param, _ctx) {
-      const content = buildPageHTML(await compileMarkdown(param.content), config)
-      return {
-        content,
-        moduleType: "html",
       }
     }
   }

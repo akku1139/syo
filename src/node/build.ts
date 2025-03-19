@@ -1,7 +1,7 @@
 import * as fs from "node:fs/promises"
 import { type Config } from "./config.ts"
 import { build as farmBuild } from "@farmfe/core"
-import { markdownJSPlugin, markdownHTMLPlugin } from "./farm-plugins/markdown.ts"
+import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
 import solid from "@farmfe/js-plugin-solid"
 import * as process from "node:process"
 import type { FarmJSPlugin } from "./types.ts"
@@ -24,7 +24,7 @@ export const build = async (config: Config): Promise<void> => {
     compilation: {
       input: {
         entry: path.resolve(import.meta.dirname, "../../src/client/entry.tsx"),
-        ...Object.fromEntries(routes),
+        // ...Object.fromEntries(routes.map(r => [r[0], `syo:page:${r[1]}`])),
       },
       output: {
         path: config.distDir ?? "dist",
@@ -34,7 +34,6 @@ export const build = async (config: Config): Promise<void> => {
     plugins: [
       routingPlugin({ config, routes }),
       ...([
-        markdownHTMLPlugin,
         markdownJSPlugin,
       ] satisfies Array<FarmJSPlugin>).map(p => p({
         config,
