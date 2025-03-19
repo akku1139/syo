@@ -1,24 +1,15 @@
 import type { FarmJSPlugin } from "../types.ts"
+import { p } from "../utils/path.ts"
 
-export const routingPlugin: FarmJSPlugin = ({ routes }) => ({
-  name: "syo routing plugin",
-  load: {
-    filters: {
-      resolvedPaths: ["^virtual:syo:routing$"],
-    },
-    executor: async (_param, _context, _hookContext) => {
-      return {
-        content: `
-          import { lazy } from "solid-js"
-          export default [ ${routes.map(route => `{
-              path: ${JSON.stringify(route[0])},
-              component: lazy(async () => <div>{await import("${route[1]}")}</div>),
-            }`)
-          } ]
-        `,
-        moduleType: "jsx"
-      }
-    }
+export const routingPlugin = ({ routes }: Parameters<FarmJSPlugin>[0]): [string, object] => [
+  "@farmfe/plugin-virtual",
+  {
+    "syo:routes": `
+      import { lazy } from "solid-js"
+      export default [ ${routes.map(route => `{
+        path: ${JSON.stringify(route[0])},
+        component: lazy(() => import("${p(route[1])}")),
+        }`)
+      } ]`
   }
-
-})
+]

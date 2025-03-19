@@ -1,11 +1,8 @@
-import * as path from "node:path"
-import * as process from "node:process"
 import { fileURLToPath } from "node:url"
 import * as v from "valibot"
 import { ConfigSchema } from "./config.ts"
 import { build } from "./build.ts"
-
-const p = (target: string) => path.resolve(process.cwd(), target)
+import { p } from "./utils/path.ts"
 
 const configFilePath = p("syo.config.js")
 const config = v.parse( ConfigSchema,

@@ -1,3 +1,3 @@
-declare module "syo:routing" {
+declare module "syo:routes" {
   export default {}
 }
