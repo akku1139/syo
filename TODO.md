@@ -74,7 +74,3 @@ https://github.com/farm-fe/plugins/blob/a4ba6c6208f3e3da517dba7d5d269ada42d7be2f
 ```rs
 const VIRTUAL_PREFIX: &str = "\0virtual:";
 ```
-
-# use vite-plugin-solid
-
-https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
