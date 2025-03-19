@@ -48,7 +48,7 @@ export const build = async (config: Config): Promise<void> => {
       () => ({
         vitePlugin: solid({
           solid: {
-            hydratable: true,
+            // hydratable: true,
           },
         }),
         filters: ["\\.tsx$", "\\.jsx$"]
