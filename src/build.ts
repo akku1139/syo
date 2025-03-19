@@ -6,7 +6,7 @@ import solid from "vite-plugin-solid"
 import * as process from "node:process"
 import type { FarmJSPlugin } from "./types.ts"
 import { routerPlugin } from "./farm-plugins/router.ts"
-// import * as path from "node:path"
+import * as path from "node:path"
 
 export const build = async (config: Config): Promise<void> => {
   process.env.NODE_ENV = "production"
@@ -24,8 +24,7 @@ export const build = async (config: Config): Promise<void> => {
     compilation: {
       // input: Object.fromEntries(routes),
       input: {
-        router: "virtual:router"
-        // index: path.resolve(import.meta.dirname, "./client/")
+        index: path.resolve(import.meta.dirname, "./client/entry.jsx")
       },
       output: {
         path: config.distDir ?? "dist",
