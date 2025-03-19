@@ -23,7 +23,9 @@ jobs:
         with:
           node-version: 23.x
           cache: pnpm
-      - run: pnpm install
+      - run: |
+          corepack enable pnpm
+          pnpm install
       - run: pnpm run typecheck
       - run: pnpm run build && find ./dist -type f | sort
 
@@ -41,7 +43,9 @@ jobs:
         with:
           node-version: 23.x
           cache: pnpm
-      - run: pnpm install
+      - run: |
+          corepack enable pnpm
+          pnpm install
       - run: pnpm run test:${{ matrix.type }}
       - run: pnpm run test:${{ matrix.type }} --trace-warnings
         if: ${{ failure() }}
