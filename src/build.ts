@@ -22,7 +22,7 @@ export const build = async (config: Config): Promise<void> => {
     compilation: {
       // input: Object.fromEntries(routes),
       input: {
-        router: "^virtual:router$"
+        router: "virtual:router"
       },
       output: {
         path: config.distDir ?? "dist",
