@@ -24,7 +24,7 @@ export const build = async (config: Config): Promise<void> => {
     compilation: {
       // input: Object.fromEntries(routes),
       input: {
-        index: path.resolve(import.meta.dirname, "./client/entry.jsx")
+        index: path.resolve(import.meta.dirname, "../../src/client/entry.tsx")
       },
       output: {
         path: config.distDir ?? "dist",
