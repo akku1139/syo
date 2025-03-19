@@ -1,11 +1,11 @@
 import * as fs from "node:fs/promises"
 import { type Config } from "./config.ts"
 import { build as farmBuild } from "@farmfe/core"
-import { markdownHTMLPlugin, markdownJSPlugin} from "./farm-plugins/markdown.ts"
+import { markdownJSPlugin} from "./farm-plugins/markdown.ts"
 import solid from "vite-plugin-solid"
 import * as process from "node:process"
 import type { FarmJSPlugin } from "./types.ts"
-import { routerPlugin } from "./farm-plugins/routing.ts"
+import { routingPlugin } from "./farm-plugins/routing.ts"
 import * as path from "node:path"
 
 export const build = async (config: Config): Promise<void> => {
@@ -33,8 +33,9 @@ export const build = async (config: Config): Promise<void> => {
     },
     plugins: [
       ...([
-        markdownHTMLPlugin, markdownJSPlugin,
-        routerPlugin,
+        // markdownHTMLPlugin,
+        markdownJSPlugin,
+        routingPlugin,
       ] satisfies Array<FarmJSPlugin>).map(p => p({
         config,
         routes,

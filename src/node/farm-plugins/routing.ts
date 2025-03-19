@@ -1,10 +1,10 @@
 import type { FarmJSPlugin } from "../types.ts"
 
-export const routerPlugin: FarmJSPlugin = ({ routes }) => ({
-  name: "syo router plugin",
+export const routingPlugin: FarmJSPlugin = ({ routes }) => ({
+  name: "syo routing plugin",
   load: {
     filters: {
-      resolvedPaths: ["^virtual:routing$"],
+      resolvedPaths: ["^virtual:syo:routing$"],
     },
     executor: async (_param, _context, _hookContext) => {
       return {

@@ -1,6 +1,6 @@
 import { Router } from "@solidjs/router"
 import { createSignal } from "solid-js"
-import routing from "virtual:routing"
+import routing from "syo:routing"
 // const routing = (await import("virtual:routing")).default
 const [routes, _setRoutes] = createSignal(routing)
 

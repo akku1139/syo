@@ -1,3 +1,3 @@
-declare module "virtual:routing" {
+declare module "syo:routing" {
   export default {}
 }

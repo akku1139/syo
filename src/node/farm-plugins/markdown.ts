@@ -114,9 +114,7 @@ export const markdownHTMLPlugin: FarmJSPlugin = ({ config }) => ({
       moduleTypes: ["markdown"]
     },
     async executor(param, _ctx) {
-      const content = `
-      export default ${JSON.stringify(buildPageHTML(await compileMarkdown(param.content), config))}
-      `
+      const content = buildPageHTML(await compileMarkdown(param.content), config)
       return {
         content,
         moduleType: "html",
