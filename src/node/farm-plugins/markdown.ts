@@ -94,7 +94,7 @@ export const markdownJSPlugin: FarmJSPlugin = ({ config }) => ({
 })
 
 export const markdownHTMLPlugin: FarmJSPlugin = ({ config }) => ({
-  name: "syo markdown to js plugin",
+  name: "syo markdown to html plugin",
   load: {
     filters: { resolvedPaths: ["\\.md$"] },
     async executor(param) {
@@ -119,7 +119,7 @@ export const markdownHTMLPlugin: FarmJSPlugin = ({ config }) => ({
       `
       return {
         content,
-        moduleType: "js",
+        moduleType: "html",
       }
     }
   }

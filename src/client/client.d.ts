@@ -1,3 +1,3 @@
-declare module "virtual:router" {
+declare module "virtual:routing" {
   export default {}
 }

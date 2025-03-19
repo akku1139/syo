@@ -5,7 +5,7 @@ import { markdownHTMLPlugin, markdownJSPlugin} from "./farm-plugins/markdown.ts"
 import solid from "vite-plugin-solid"
 import * as process from "node:process"
 import type { FarmJSPlugin } from "./types.ts"
-import { routerPlugin } from "./farm-plugins/router.ts"
+import { routerPlugin } from "./farm-plugins/routing.ts"
 import * as path from "node:path"
 
 export const build = async (config: Config): Promise<void> => {
