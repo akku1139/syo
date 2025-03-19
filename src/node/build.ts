@@ -51,7 +51,7 @@ export const build = async (config: Config): Promise<void> => {
             // hydratable: true,
           },
         }),
-        filters: ["\\.tsx$", "\\.jsx$"]
+        filters: ["\\.tsx$", "\\.jsx$", "\\.md$", "\\.mdx$"],
       })
     ]
   })
