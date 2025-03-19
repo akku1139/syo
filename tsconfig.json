@@ -12,6 +12,10 @@
     "forceConsistentCasingInFileNames": true, // Windows...
     "resolveJsonModule": true,
 
+    // JSX
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+
     // Output
     "declaration": true,
     //"noEmitOnError": true,
