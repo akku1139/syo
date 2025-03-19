@@ -64,7 +64,7 @@ const compileMarkdown: SourceProcessor = async (source) => {
 export const markdownJSPlugin: FarmJSPlugin = ({ config }) => ({
   name: "syo markdown to js plugin",
   load: {
-    filters: { resolvedPaths: ["\\.md$"] },
+    filters: { resolvedPaths: ["\\.md?js$"] },
     async executor(param) {
       if (param.query.length === 0 && fsSync.existsSync(param.resolvedPath)) {
         const content = (await fs.readFile(param.resolvedPath)).toString()

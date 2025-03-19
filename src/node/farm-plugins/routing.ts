@@ -8,7 +8,7 @@ export const routingPlugin = ({ routes }: Parameters<FarmJSPlugin>[0]): [string,
       import { lazy } from "solid-js"
       export default [ ${routes.map(route => `{
         path: ${JSON.stringify(route[0])},
-        component: lazy(() => import("${p(route[1])}")),
+        component: lazy(() => import("${p(route[1])}?js")),
         }`)
       } ]`
   }
