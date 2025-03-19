@@ -20,7 +20,10 @@ export const build = async (config: Config): Promise<void> => {
 
   await farmBuild({
     compilation: {
-      input: Object.fromEntries(routes),
+      // input: Object.fromEntries(routes),
+      input: {
+        router: "^virtual:router$"
+      },
       output: {
         path: config.distDir ?? "dist",
         publicPath: config.basePath,

@@ -4,7 +4,7 @@ export const routerPlugin: FarmJsPlugin = ({ routes }) => ({
   name: "syo router plugin",
   load: {
     filters: {
-      resolvedPaths: ['^virtual:router$'],
+      resolvedPaths: ["^virtual:router$"],
     },
     executor: async (_param, _context, _hookContext) => {
       return {
@@ -13,11 +13,11 @@ export const routerPlugin: FarmJsPlugin = ({ routes }) => ({
           export default [ ${
             routes.map(route => `{
               path: ${JSON.stringify(route[0])},
-              component: lazy(() => import("${route[1]}")),
+              component: lazy(async () => <div>{await import("${route[1]}")}</div>),
             },`)
           } ]
         `,
-        moduleType: "js"
+        moduleType: "jsx"
       }
     }
   }
