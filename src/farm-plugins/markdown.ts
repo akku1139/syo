@@ -3,7 +3,7 @@ import * as fsSync from "node:fs"
 
 import { codeToHtml } from "shiki"
 import { transformerTwoslash } from "@shikijs/twoslash"
-import type { FarmSourcePlugin, PageData, SourceProcessor } from "../types.ts"
+import type { FarmJsPlugin, PageData, SourceProcessor } from "../types.ts"
 import { Marked } from "marked"
 import { escapeHTML } from "../utils/escape.ts"
 import { buildPageHTML } from "../utils/html.ts"
@@ -61,7 +61,7 @@ const compileMarkdown: SourceProcessor = async (source) => {
   return { content, title, toc, layout: "doc" }
 }
 
-export const markdownPlugin: FarmSourcePlugin = (config) => ({
+export const markdownPlugin: FarmJsPlugin = ({ config }) => ({
   name: "syo markdown plugin",
   load: {
     filters: { resolvedPaths: ["\\.md$"] },
@@ -82,10 +82,12 @@ export const markdownPlugin: FarmSourcePlugin = (config) => ({
       moduleTypes: ["markdown"]
     },
     async executor(param, _ctx) {
-      const content = buildPageHTML(await compileMarkdown(param.content), config)
+      const content = `
+      export default ${JSON.stringify(buildPageHTML(await compileMarkdown(param.content), config))}
+      `
       return {
         content,
-        moduleType: "html",
+        moduleType: "js",
       }
     }
   }

@@ -4,28 +4,33 @@ import { build as farmBuild } from "@farmfe/core"
 import { markdownPlugin } from "./farm-plugins/markdown.ts"
 import solid from "vite-plugin-solid"
 import * as process from "node:process"
+import type { FarmJsPlugin } from "./types.ts"
 
 export const build = async (config: Config): Promise<void> => {
   process.env.NODE_ENV = "production"
 
   const srcDir = config.srcDir ?? "pages"
   const srcs = await Array.fromAsync(fs.glob(`${srcDir}/**/*.md`))
+  const routes: Parameters<FarmJsPlugin>[0]["routes"] = srcs.map(src => {
+    return [
+      src.replace(new RegExp(`^${srcDir}/`), "").replace(/\.md$/, ""),
+      src,
+    ]
+  })
 
   await farmBuild({
     compilation: {
-      input: Object.fromEntries(srcs.map(src => {
-        return [
-          src.replace(new RegExp(`^${srcDir}/`), "").replace(/\.md$/, ""),
-          src,
-        ]
-      })),
+      input: Object.fromEntries(routes),
       output: {
         path: config.distDir ?? "dist",
         publicPath: config.basePath,
       },
     },
     plugins: [
-      ...[markdownPlugin].map(p => p(config)),
+      ...([markdownPlugin] satisfies Array<FarmJsPlugin>).map(p => p({
+        config,
+        routes,
+      })),
     ],
     vitePlugins: [
       () => ({
