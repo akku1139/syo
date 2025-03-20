@@ -1,5 +1,6 @@
-import { type RouteDefinition, Router } from "@solidjs/router"
-import { createSignal } from "solid-js"
+import { Router } from "@solidjs/router"
+// import { type RouteDefinition } from "@solidjs/router"
+// import { createSignal } from "solid-js"
 import routes from "syo:routes"
 
 // https://github.com/farm-fe/farm/issues/2125
