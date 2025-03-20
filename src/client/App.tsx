@@ -8,12 +8,10 @@ import routes from "syo:routes"
 
 // const [routesSignal, _setRoutes] = createSignal<Array<RouteDefinition>>(routes)
 
-console.log("routes", routes)
-
-export default () => <Router>{
-  // routesSignal()
-  routes
-}</Router>
-
 //const mod = (await routes[0].component).default
 //export default () => mod
+
+export default <Router>{
+  // routesSignal() // Uncaught TypeError: Comp is not a function
+  routes
+}</Router>
