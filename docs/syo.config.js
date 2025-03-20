@@ -1,6 +1,5 @@
-import { defineConfig } from "../src/node/config.ts"
-
-export default defineConfig({
+/** @type { import("../src/node/config.ts").Config } */
+export default {
   title: "Syo",
   basePath: "/syo/",
-})
+}
