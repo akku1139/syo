@@ -40,10 +40,14 @@ export const build = async (config: Config): Promise<void> => {
       routingPlugin({ config, routes }),
       mdxPlugin({ jsx: true, jsxImportSource: "solid-js" }),
       {
-        name: "jsx to solid",
+        name: "jsx to solid", // hack
+        priority: 99.5,
         transform: {
-          filters: { moduleTypes: ["jsx", "tsx"] },
+          filters: { moduleTypes: ["jsx", "tsx"], resolvedPaths: ["\\.md$", "\\.mdx$"] },
           async executor(param, _ctx) {
+            if(!(param.resolvedPath.endsWith(".md") || param.resolvedPath.endsWith(".mdx"))) {
+              return param
+            }
             return {
               content: param.content,
               moduleType: "solid",
@@ -55,7 +59,17 @@ export const build = async (config: Config): Promise<void> => {
         solid: {
           // hydratable: true
         }
-      })
+      }),
+      {
+        ...solidPlugin({
+          solid: {
+            // hydratable: true
+          },
+          extensions: [".md", ".mdx"],
+        }),
+        priority:99,
+        load: void 0,
+      }
     ],
     vitePlugins: [
       // @farmfe/js-plugin-solid is deprecated
