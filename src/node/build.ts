@@ -70,7 +70,7 @@ export const build = async (config: Config): Promise<void> => {
       // https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
       solidPlugin({
         solid: {
-          // hydratable: true
+          hydratable: true
         }
       }),
       {
