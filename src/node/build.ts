@@ -46,7 +46,7 @@ export const build = async (config: Config): Promise<void> => {
           async executor(param, _ctx) {
             return {
               content: param.content,
-              moduleType: "jsx",
+              moduleType: "solid",
             }
           }
         }
