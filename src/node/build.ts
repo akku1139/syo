@@ -67,9 +67,9 @@ export const build = async (config: Config): Promise<void> => {
           },
           extensions: [".md", ".mdx"],
         }),
+        name: "solid mdx",
         priority:99,
-        load: void 0,
-      }
+      },
     ],
     vitePlugins: [
       // @farmfe/js-plugin-solid is deprecated
