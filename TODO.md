@@ -74,3 +74,7 @@ https://github.com/farm-fe/plugins/blob/a4ba6c6208f3e3da517dba7d5d269ada42d7be2f
 ```rs
 const VIRTUAL_PREFIX: &str = "\0virtual:";
 ```
+
+# tsconfig for client code
+
+- https://swc.rs/docs/migrating-from-tsc
