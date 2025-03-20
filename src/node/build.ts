@@ -32,9 +32,20 @@ export const build = async (config: Config): Promise<void> => {
         path: config.distDir ?? "dist",
         publicPath: config.basePath,
       },
+      mode: "production",
       presetEnv: false, // to enable, install core-js
       minify: false, // debug
       sourcemap: false, // debug
+      // debug: disable chunk splitting
+      // https://www.farmfe.org/docs/advanced/partial-bundling/#bundle-all-modules-together
+      partialBundling: {
+        enforceResources: [
+          {
+            name: 'index',
+            test: ['.+'],
+          }
+        ],
+      },
     },
     plugins: [
       routingPlugin({ config, routes }),
@@ -49,7 +60,7 @@ export const build = async (config: Config): Promise<void> => {
               return param
             }
             return {
-              content: param.content,
+              content: param.content.replaceAll("<_components.", "<").replaceAll("</_components.", "</"), // hack: Make solid.js work well
               moduleType: "solid",
             }
           }
