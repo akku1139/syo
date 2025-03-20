@@ -33,6 +33,7 @@ export const build = async (config: Config): Promise<void> => {
         publicPath: config.basePath,
       },
       presetEnv: false, // to enable, install core-js
+      minify: false, // debug
     },
     plugins: [
       routingPlugin({ config, routes }),
