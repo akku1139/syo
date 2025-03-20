@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@farmfe/core": "^1.7.1",
+    "@farmfe/js-plugin-solid": "^2.12.0",
     "@farmfe/plugin-mdx": "^0.0.7",
     "@farmfe/plugin-virtual": "^0.0.10",
     "@shikijs/twoslash": "^3.2.1",
