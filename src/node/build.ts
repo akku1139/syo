@@ -2,11 +2,11 @@ import * as fs from "node:fs/promises"
 import { type Config } from "./config.ts"
 import { build as farmBuild } from "@farmfe/core"
 // import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
-import solid from "vite-plugin-solid"
+import solidPlugin from "vite-plugin-solid"
 import * as process from "node:process"
 import type { FarmJSPlugin } from "./types.ts"
 import { routingPlugin } from "./farm-plugins/routing.ts"
-import mdx from "@mdx-js/rollup"
+import mdxPlugin from "@farmfe/plugin-mdx"
 import * as path from "node:path"
 
 export const build = async (config: Config): Promise<void> => {
@@ -35,18 +35,13 @@ export const build = async (config: Config): Promise<void> => {
     },
     plugins: [
       routingPlugin({ config, routes }),
+      mdxPlugin({ jsx: true, jsxImportSource: "solid-js" }),
     ],
     vitePlugins: [
-      () => ({
-        vitePlugin: mdx({
-          jsxImportSource: "solid-js"
-        }),
-        filters: ["\\.md$", "\\.mdx$"]
-      }),
       // @farmfe/js-plugin-solid is deprecated
       // https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
       () => ({
-        vitePlugin: solid({
+        vitePlugin: solidPlugin({
           solid: {
             // hydratable: true,
           },
