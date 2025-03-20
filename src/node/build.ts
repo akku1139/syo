@@ -44,6 +44,7 @@ export const build = async (config: Config): Promise<void> => {
           solid: {
             // hydratable: true,
           },
+          extensions: [".md", ".mdx"],
         }),
         filters: ["\\.tsx$", "\\.jsx$", "\\.md$", "\\.mdx$"],
       }),
