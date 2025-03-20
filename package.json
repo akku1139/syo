@@ -45,7 +45,6 @@
     "shiki": "^3.2.1",
     "solid-js": "^1.9.5",
     "valibot": "1.0.0-rc.4",
-    "vite-plugin-solid": "^2.11.6",
     "yaml": "^2.7.0"
   },
   "devDependencies": {

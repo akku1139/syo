@@ -66,6 +66,8 @@ export const build = async (config: Config): Promise<void> => {
           }
         }
       } satisfies JsPlugin,
+      // @farmfe/js-plugin-solid is deprecated
+      // https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
       solidPlugin({
         solid: {
           // hydratable: true
@@ -82,21 +84,5 @@ export const build = async (config: Config): Promise<void> => {
         priority:99,
       },
     ],
-    vitePlugins: [
-      // @farmfe/js-plugin-solid is deprecated
-      // https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
-      // () => ({
-      //   vitePlugin: {
-      //     ...solidPlugin({
-      //       solid: {
-      //         // hydratable: true,
-      //       },
-      //     }),
-      //     extensions: [".md", ".mdx"],
-      //     priority: 1000,
-      //   },
-      //   filters: ["\\.tsx$", "\\.jsx$", "\\.md$", "\\.mdx$"],
-      // }),
-    ]
   })
 }
