@@ -41,12 +41,15 @@ export const build = async (config: Config): Promise<void> => {
       // @farmfe/js-plugin-solid is deprecated
       // https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
       () => ({
-        vitePlugin: solidPlugin({
-          solid: {
-            // hydratable: true,
-          },
+        vitePlugin: {
+          ...solidPlugin({
+            solid: {
+              // hydratable: true,
+            },
+          }),
           extensions: [".md", ".mdx"],
-        }),
+          priority: 1000,
+        },
         filters: ["\\.tsx$", "\\.jsx$", "\\.md$", "\\.mdx$"],
       }),
     ]
