@@ -57,7 +57,8 @@ export const build = async (config: Config): Promise<void> => {
         jsx: true, jsxImportSource: "solid-js",
         parse: { // https://github.com/farm-fe/plugins/blob/59d8f2c9f87f396f7689aac8b3afb365f2be1290/rust-plugins/mdx/src/lib.rs#L38
           constructs: {
-            frontmatter: true,
+            frontmatter: true, // https://docs.rs/mdxjs/0.2.5/mdxjs/struct.MdxConstructs.html#structfield.frontmatter
+            // not working?
           }
         },
       } as Parameters<typeof mdxPlugin>[0]),
