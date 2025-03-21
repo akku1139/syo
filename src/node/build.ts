@@ -8,7 +8,7 @@ import * as process from "node:process"
 import type { FarmJSPlugin, InternalConfig } from "./types.ts"
 import { routingPlugin } from "./farm-plugins/routing.ts"
 import mdxPlugin from "@farmfe/plugin-mdx"
-import { prerenderPlugin } from "./farm-plugins/prerender.ts"
+import { prerenderPluginLoad, prerenderPluginTransform } from "./farm-plugins/prerender.ts"
 
 export const build = async (userConfig: Config): Promise<void> => {
   process.env.NODE_ENV = "production"
@@ -59,7 +59,7 @@ export const build = async (userConfig: Config): Promise<void> => {
     plugins: [
       ...[
         routingPlugin,
-        prerenderPlugin,
+        prerenderPluginLoad, prerenderPluginTransform,
       ].map(p => p({ config, routes })),
       mdxPlugin({
         jsx: true, jsxImportSource: "solid-js",

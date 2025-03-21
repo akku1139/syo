@@ -3,8 +3,8 @@ import * as path from "node:path"
 import type { JSX } from "solid-js/jsx-runtime"
 import { renderToString } from "solid-js/web"
 
-export const prerenderPlugin: FarmJSPlugin = ({ config }) => ({
-  name: "syo prerender plugin",
+export const prerenderPluginLoad: FarmJSPlugin = ({ config }) => ({
+  name: "syo prerender plugin (loader)",
   load: {
     filters: {
       resolvedPaths: ["\\.mdx?\\?html$"]
@@ -23,7 +23,12 @@ export const prerenderPlugin: FarmJSPlugin = ({ config }) => ({
         moduleType: "tsx",
       }
     },
-  },
+  }
+})
+
+export const prerenderPluginTransform: FarmJSPlugin = () => ({
+  name: "syo prerender plugin (transformer)",
+  priority: 97,
   transform: {
     filters: { resolvedPaths: ["\\.mdx?\\?html$"] },
     async executor(param) {
