@@ -21,7 +21,7 @@ export const prerenderPluginLoad: FarmJSPlugin = ({ config }) => ({
             return <App
               base=${JSON.stringify(config.basePath)}
               url=${JSON.stringify(param.resolvedPath.replace(new RegExp(`^${config.internal.srcDir}/`), "").replace(/\.md$/, ""))}
-            />)
+            />
           }
         `,
         moduleType: "tsx",
