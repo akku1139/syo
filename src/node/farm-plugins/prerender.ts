@@ -1,3 +1,7 @@
+/**
+ * Hack!
+ */
+
 import type { FarmJSPlugin } from "../types.ts"
 import * as path from "node:path"
 import type { JSX } from "solid-js/jsx-runtime"
@@ -12,7 +16,7 @@ export const prerenderPluginLoad: FarmJSPlugin = ({ config }) => ({
     async executor(param) {
       return {
         content: `
-          return async () => {
+          async () => {
             const App = (await import(${JSON.stringify(path.resolve(import.meta.dirname, "../../../src/client/App.tsx"))})).default
             return <App
               base=${JSON.stringify(config.basePath)}
@@ -35,7 +39,7 @@ export const prerenderPluginTransform: FarmJSPlugin = () => ({
       return {
         moduleType: "html",
         content: "<!DOCTYPE html>"
-        + renderToString((new Function(param.content) as () => JSX.Element))
+        + renderToString((new Function("return " + param.content) as () => JSX.Element))
       }
     },
   }
