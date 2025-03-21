@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@farmfe/core':
-    hash: gvwqmsxf762dgzbxwfrr6qxjlu
+    hash: debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac
     path: patches/@farmfe__core.patch
 
 importers:
@@ -15,10 +15,10 @@ importers:
     dependencies:
       '@farmfe/core':
         specifier: ^1.7.1
-        version: 1.7.1(patch_hash=gvwqmsxf762dgzbxwfrr6qxjlu)
+        version: 1.7.1(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
       '@farmfe/js-plugin-solid':
         specifier: ^2.12.0
-        version: 2.12.0(@farmfe/core@1.7.1(patch_hash=gvwqmsxf762dgzbxwfrr6qxjlu))(rollup@4.36.0)(solid-js@1.9.5)
+        version: 2.12.0(@farmfe/core@1.7.1(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)
       '@farmfe/plugin-mdx':
         specifier: ^0.0.7
         version: 0.0.7
@@ -2173,7 +2173,7 @@ snapshots:
   '@farmfe/core-win32-x64-msvc@1.7.1':
     optional: true
 
-  '@farmfe/core@1.7.1(patch_hash=gvwqmsxf762dgzbxwfrr6qxjlu)':
+  '@farmfe/core@1.7.1(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)':
     dependencies:
       '@farmfe/runtime': 0.12.10
       '@farmfe/runtime-plugin-hmr': 3.5.10
@@ -2217,11 +2217,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@farmfe/js-plugin-solid@2.12.0(@farmfe/core@1.7.1(patch_hash=gvwqmsxf762dgzbxwfrr6qxjlu))(rollup@4.36.0)(solid-js@1.9.5)':
+  '@farmfe/js-plugin-solid@2.12.0(@farmfe/core@1.7.1(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.10)
-      '@farmfe/core': 1.7.1(patch_hash=gvwqmsxf762dgzbxwfrr6qxjlu)
+      '@farmfe/core': 1.7.1(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
       '@rollup/pluginutils': 5.1.4(rollup@4.36.0)
       babel-preset-solid: 1.9.5(@babel/core@7.26.10)
       merge-anything: 5.1.7
