@@ -1,3 +1,7 @@
+---
+description: top page
+---
+
 # Syo
 
 Cool and Easy documentation site generator

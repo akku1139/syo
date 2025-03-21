@@ -53,7 +53,14 @@ export const build = async (config: Config): Promise<void> => {
     },
     plugins: [
       routingPlugin({ config, routes }),
-      mdxPlugin({ jsx: true, jsxImportSource: "solid-js" }),
+      mdxPlugin({
+        jsx: true, jsxImportSource: "solid-js",
+        parse: { // https://github.com/farm-fe/plugins/blob/59d8f2c9f87f396f7689aac8b3afb365f2be1290/rust-plugins/mdx/src/lib.rs#L38
+          constructs: {
+            frontmatter: true,
+          }
+        },
+      } as Parameters<typeof mdxPlugin>[0]),
       {
         name: "jsx to solid", // hack
         priority: 99.5,
