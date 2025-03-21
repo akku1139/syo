@@ -22,6 +22,10 @@ export const build = async (config: Config): Promise<void> => {
     ]
   })
 
+  const solidOptions: Exclude<Parameters<typeof solidPlugin>[0], undefined>["solid"] = {
+    hydratable: true
+  }
+
   await farmBuild({
     compilation: {
       input: {
@@ -69,15 +73,11 @@ export const build = async (config: Config): Promise<void> => {
       // @farmfe/js-plugin-solid is deprecated
       // https://github.com/farm-fe/farm/issues/2124#issuecomment-2736695432
       solidPlugin({
-        solid: {
-          hydratable: true
-        }
+        solid: solidOptions
       }),
       {
         ...solidPlugin({
-          solid: {
-            // hydratable: true
-          },
+          solid: solidOptions,
           extensions: [".md", ".mdx"],
         }),
         name: "solid mdx",
