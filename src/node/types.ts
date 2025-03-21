@@ -14,10 +14,16 @@ export type PageData = {
 
 export type SourceProcessor = (sourceText: string) => PageData | Promise<PageData>
 export type FarmJSPlugin = (args: {
-  config: Config
+  config: InternalConfig
   /** [URL path, file name] */
   routes: Array<[
     string,
     string
   ]>
 }) => JsPlugin
+
+export type InternalConfig = Config & {
+  internal: {
+    srcDir: string
+  }
+}

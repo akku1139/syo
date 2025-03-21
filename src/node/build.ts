@@ -5,19 +5,25 @@ import { build as farmBuild, type JsPlugin } from "@farmfe/core"
 // import solidPlugin from "vite-plugin-solid"
 import solidPlugin from "@farmfe/js-plugin-solid"
 import * as process from "node:process"
-import type { FarmJSPlugin } from "./types.ts"
+import type { FarmJSPlugin, InternalConfig } from "./types.ts"
 import { routingPlugin } from "./farm-plugins/routing.ts"
 import mdxPlugin from "@farmfe/plugin-mdx"
-import * as path from "node:path"
+import { prerenderPlugin } from "./farm-plugins/prerender.ts"
 
-export const build = async (config: Config): Promise<void> => {
+export const build = async (userConfig: Config): Promise<void> => {
   process.env.NODE_ENV = "production"
 
-  const srcDir = config.srcDir ?? "pages"
-  const srcs = await Array.fromAsync(fs.glob(`${srcDir}/**/*.md`))
+  const config: InternalConfig = {
+    ...userConfig,
+    internal: {
+      srcDir: userConfig.srcDir ?? "pages"
+    }
+  }
+
+  const srcs = await Array.fromAsync(fs.glob(`${config.internal.srcDir}/**/*.md`))
   const routes: Parameters<FarmJSPlugin>[0]["routes"] = srcs.map(src => {
     return [
-      src.replace(new RegExp(`^${srcDir}/`), "").replace(/\.md$/, ""),
+      src.replace(new RegExp(`^${config.internal.srcDir}/`), "").replace(/\.md$/, ""),
       src,
     ]
   })
@@ -29,8 +35,7 @@ export const build = async (config: Config): Promise<void> => {
   await farmBuild({
     compilation: {
       input: {
-        // ...Object.fromEntries(routes),
-        index: path.resolve(import.meta.dirname, "../../src/client/index.html")
+        ...Object.fromEntries(routes.map(r=>[r[0]+"?html", r[1]])),
       },
       output: {
         path: config.distDir ?? "dist",
@@ -52,7 +57,10 @@ export const build = async (config: Config): Promise<void> => {
       },
     },
     plugins: [
-      routingPlugin({ config, routes }),
+      ...[
+        routingPlugin,
+        prerenderPlugin,
+      ].map(p => p({ config, routes })),
       mdxPlugin({
         jsx: true, jsxImportSource: "solid-js",
         parse: { // https://github.com/farm-fe/plugins/blob/59d8f2c9f87f396f7689aac8b3afb365f2be1290/rust-plugins/mdx/src/lib.rs#L38
@@ -66,7 +74,7 @@ export const build = async (config: Config): Promise<void> => {
         name: "jsx to solid", // hack
         priority: 99.5,
         transform: {
-          filters: { moduleTypes: ["jsx", "tsx"], resolvedPaths: ["\\.md$", "\\.mdx$"] },
+          filters: { moduleTypes: ["jsx", "tsx"], resolvedPaths: ["\\.mdx?$"] },
           async executor(param, _ctx) {
             if(!(param.resolvedPath.endsWith(".md") || param.resolvedPath.endsWith(".mdx"))) {
               return param

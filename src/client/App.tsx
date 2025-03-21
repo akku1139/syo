@@ -1,4 +1,5 @@
 import { Router } from "@solidjs/router"
+import { HydrationScript, isServer } from "solid-js/web"
 // import { type RouteDefinition } from "@solidjs/router"
 // import { createSignal } from "solid-js"
 import routes from "syo:routes"
@@ -11,7 +12,20 @@ import routes from "syo:routes"
 //const mod = (await routes[0].component).default
 //export default () => mod
 
-export default () => <Router>{
-  // routesSignal() // Uncaught TypeError: Comp is not a function
-  routes
-}</Router>
+export default (props?: { url?: string, base?: string }) =>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syo</title>
+    <HydrationScript />
+  </head>
+  <body>
+    <div id="root">
+      <Router url={isServer ? props?.url : ""} base={props?.base} >{
+        // routesSignal() // Uncaught TypeError: Comp is not a function
+        routes
+      }</Router>
+    </div>
+  </body>
+</html>
