@@ -35,7 +35,7 @@ export const build = async (userConfig: Config): Promise<void> => {
   await farmBuild({
     compilation: {
       input: {
-        ...Object.fromEntries(routes.map(r=>[r[0]+"?html", r[1]])),
+        ...Object.fromEntries(routes.map(r=>[r[0], r[1]+"?html"])),
       },
       output: {
         path: config.distDir ?? "dist",
