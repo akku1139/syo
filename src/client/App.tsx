@@ -31,3 +31,5 @@ export default ((props?: { url?: string, base?: string }) =>
     <script src="./entry.tsx" type="module" defer />
   </body>
 </html>) satisfies App
+
+// TODO: defer vs async

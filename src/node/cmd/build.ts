@@ -1,5 +1,5 @@
 import * as fs from "node:fs/promises"
-import { build as farmBuild, type JsPlugin } from "@farmfe/core"
+import { build as farmBuild, logger, type JsPlugin } from "@farmfe/core"
 // import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
 import solidPlugin from "@farmfe/js-plugin-solid"
 import * as process from "node:process"
@@ -43,8 +43,10 @@ export const build: Command = async (config, args) => {
 
   // main logic
 
-  await fs.rm(config.internal.distDir, { recursive: true, force: true })
-  await fs.mkdir(config.internal.distDir, { recursive: true })
+  // await fs.rm(config.internal.distDir, { recursive: true, force: true })
+  // await fs.mkdir(config.internal.distDir, { recursive: true })
+
+  logger.info("building")
 
   await farmBuild({
     compilation: {
@@ -104,6 +106,8 @@ export const build: Command = async (config, args) => {
       },
     ],
   })
+
+  logger.info("prerendering")
 
   const App = (await dynamicImport(path.join(appBuildPath, "index.js"))).default as App
 
