@@ -25,7 +25,7 @@ export const prerenderPluginLoad: FarmJSPlugin = ({ config }) => ({
                 .replace(new RegExp(`^${path.join(process.cwd(), config.internal.srcDir)}/`), config.internal.basePath)
                 .replace(/\.md$/, "")
                 .replace(/\/index$/, "/")
-              }
+              )}
             />
           }
         `,
