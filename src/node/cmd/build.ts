@@ -3,11 +3,14 @@ import { build as farmBuild, type JsPlugin } from "@farmfe/core"
 // import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
 import solidPlugin from "@farmfe/js-plugin-solid"
 import * as process from "node:process"
-import type { FarmJSPlugin, Command } from "../types.ts"
+import type { FarmJSPlugin, Command, App } from "../types.ts"
 import { routingPlugin } from "../farm-plugins/routing.ts"
 import mdxPlugin from "@farmfe/plugin-mdx"
 import { parseArgs } from "node:util"
 import * as path from "node:path"
+import { cacheDir } from "../utils/path.ts"
+import { dynamicImport } from "../../../src/raw/import.js"
+import { renderToString } from "solid-js/web"
 
 export const build: Command = async (config, args) => {
   process.env.NODE_ENV = "production"
@@ -36,29 +39,26 @@ export const build: Command = async (config, args) => {
     hydratable: true
   }
 
+  const appBuildPath = path.join(cacheDir, "app")
+
+  // main logic
+
+  await fs.rm(config.internal.distDir, { recursive: true, force: true })
+  await fs.mkdir(config.internal.distDir, { recursive: true })
+
   await farmBuild({
     compilation: {
       input: {
-        index: path.resolve(import.meta.dirname, "../../src/client/index.html")
+        index: path.resolve(import.meta.dirname, "../../src/client/App.tsx")
       },
       output: {
-        path: config.distDir ?? "dist",
-        publicPath: config.basePath,
+        path: appBuildPath,
+        targetEnv: "browser-esnext",
       },
       mode: "production",
       presetEnv: false, // to enable, install core-js
       minify: false, // debug
       sourcemap: false, // debug
-      // debug: disable chunk splitting
-      // https://www.farmfe.org/docs/advanced/partial-bundling/#bundle-all-modules-together
-      partialBundling: {
-        enforceResources: [
-          {
-            name: 'index',
-            test: ['.+'],
-          }
-        ],
-      },
     },
     plugins: [
       ...[
@@ -103,5 +103,43 @@ export const build: Command = async (config, args) => {
         priority:99,
       },
     ],
+  })
+
+  const App = (await dynamicImport(path.join(appBuildPath, "index.js"))).default as App
+
+  await farmBuild({
+    compilation: {
+      input: {
+        ...Object.fromEntries(routes),
+      },
+      output: {
+        path: config.internal.distDir,
+        publicPath: config.basePath,
+        targetEnv: "browser-esnext",
+      },
+      mode: "production",
+      presetEnv: false, // to enable, install core-js
+      minify: false, // debug
+      sourcemap: false, // debug
+    },
+    plugins: [
+      {
+        name: "syo prerendering plugin",
+        transform: {
+          filters: { resolvedPaths: ["\\.mdx?$"] },
+          async executor(param) {
+            return {
+              moduleType: "html",
+              content: "<!DOCTYPE html>"+renderToString(() => App({
+                base: config.internal.basePath,
+                url: param.resolvedPath
+                  .replace(new RegExp(`^${path.join(process.cwd(), config.internal.srcDir)}/`), config.internal.basePath)
+                  .replace(/\.md$/, "").replace(/\/index$/, "/")
+              })),
+            }
+          },
+        }
+      }
+    ]
   })
 }

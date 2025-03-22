@@ -20,9 +20,11 @@ const config: InternalConfig = {
   internal: {
     srcDir: userConfig.srcDir ?? "pages",
     basePath: userConfig.basePath ?? "/",
+    distDir: userConfig.distDir ?? "dist"
   }
 }
 
+// https://github.com/farm-fe/farm/blob/7a69a887d9826214f78bcc49165dbe6b56a9f309/packages/cli/src/index.ts
 const commandMap: Record<string, Command> = {
   build,
   dev: devServer,

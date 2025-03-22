@@ -1,5 +1,6 @@
 import type { JsPlugin } from "@farmfe/core"
 import type { Config } from "./config.ts"
+import type { JSX } from "solid-js"
 
 export type PageData = {
   title: string
@@ -26,7 +27,13 @@ export type InternalConfig = Config & {
   internal: {
     srcDir: string
     basePath: string
+    distDir: string
   }
 }
 
 export type Command = (userConfig: InternalConfig, args: Array<string>) => Promise<void>
+
+export type App = (props?: {
+  url?: string;
+  base?: string;
+}) => JSX.Element

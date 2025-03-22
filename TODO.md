@@ -10,6 +10,9 @@
 
 # `syo.config.ts`
 
+- https://github.com/farm-fe/farm/blob/7a69a887d9826214f78bcc49165dbe6b56a9f309/packages/core/src/config/index.ts#L900
+- https://github.com/farm-fe/farm/blob/7a69a887d9826214f78bcc49165dbe6b56a9f309/packages/core/src/index.ts#L59
+
 # Commandline config
 
 # Dev Server
@@ -90,3 +93,11 @@ const VIRTUAL_PREFIX: &str = "\0virtual:";
 - https://ja.vite.dev/guide/cli
 
 # `basePath` `baseURL`
+
+# change root dir (config? cli args?)
+
+- `cd docs`
+- `--root ./docs`
+- `{ root: "docs" }`
+
+`utils/path.ts`

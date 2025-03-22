@@ -3,6 +3,7 @@ import { HydrationScript, isServer } from "solid-js/web"
 // import { type RouteDefinition } from "@solidjs/router"
 // import { createSignal } from "solid-js"
 import routes from "syo:routes"
+import type { App } from "../node/types.ts"
 
 // https://github.com/farm-fe/farm/issues/2125
 // const routes = (await import("syo:routes")).default
@@ -12,7 +13,7 @@ import routes from "syo:routes"
 //const mod = (await routes[0].component).default
 //export default () => mod
 
-export default (props?: { url?: string, base?: string }) =>
+export default ((props?: { url?: string, base?: string }) =>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -27,5 +28,6 @@ export default (props?: { url?: string, base?: string }) =>
         routes
       }</Router>
     </div>
+    <script src="./entry.tsx" type="module" defer />
   </body>
-</html>
+</html>) satisfies App
