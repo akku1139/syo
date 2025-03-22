@@ -52,7 +52,7 @@ export const prerenderPluginTransform: FarmJSPlugin = () => ({
   transform: {
     filters: { resolvedPaths: ["\\.mdx?\\?html$"] },
     async executor(param) {
-      const code = 'async () => { const { "_$createComponent": createComponent } = await import("solid-js/web");\nreturn await ('+param.content.replace(/.*\n/, "")slice(0, -1)+")()}"
+      const code = 'async () => { const { "_$createComponent": createComponent } = await import("solid-js/web");\nreturn await ('+param.content.replace(/.*\n/, "").slice(0, -1)+")()}"
       console.log(param.resolvedPath, code)
       return {
         moduleType: "html",
