@@ -21,7 +21,7 @@ export const prerenderPluginLoad: FarmJSPlugin = ({ config }) => ({
             const App = (await import(${JSON.stringify(path.resolve(import.meta.dirname, "../../../src/client/App.tsx"))})).default
             return <App
               base=${JSON.stringify(config.basePath)}
-              url=${JSON.stringify(param.resolvedPath.replace(new RegExp(`^${path.join(process.cwd(), config.internal.srcDir)}/`), config.basePath).replace(/\.md$/, ""))}
+              url=${JSON.stringify(param.resolvedPath.replace(new RegExp(`^${path.join(process.cwd(), config.internal.srcDir)}/`), config.internal.basePath).replace(/\.md$/, "").replace(/\/index$/, "/")}
             />
           }
         `,
@@ -31,13 +31,24 @@ export const prerenderPluginLoad: FarmJSPlugin = ({ config }) => ({
   }
 })
 
+/* generated code
+import { createComponent as _$createComponent } from "solid-js/web";
+async () => {
+  const App = (await import("/root/syo/src/client/App.tsx")).default;
+  return _$createComponent(App, {
+    base: "/syo/",
+    url: "/syo/"
+  });
+};
+*/
+
 export const prerenderPluginTransform: FarmJSPlugin = () => ({
   name: "syo prerender plugin (transformer)",
   priority: 97,
   transform: {
     filters: { resolvedPaths: ["\\.mdx?\\?html$"] },
     async executor(param) {
-      const code = 'async () => { const { "_$createComponent": createComponent } = await import("solid-js/web"); return '+param.content.replace(/.*\n/, "")+"}"
+      const code = 'async () => { const { "_$createComponent": createComponent } = await import("solid-js/web");\nreturn await ('+param.content.replace(/.*\n/, "")+")()}"
       return {
         moduleType: "html",
         content: "<!DOCTYPE html>"
