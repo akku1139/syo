@@ -36,7 +36,9 @@ export const build: Command = async (config, args) => {
   })
 
   const solidOptions: Exclude<Parameters<typeof solidPlugin>[0], undefined>["solid"] = {
-    hydratable: true
+    hydratable: true,
+    generate: "universal", // FIXME: not good
+    // https://github.com/solidjs/solid/blob/41fa6c14b4bf71eed593303cd63b32d53e3515e9/packages/solid-ssr/examples/ssg/rollup.config.js
   }
 
   const appBuildPath = path.join(cacheDir, "app")
@@ -55,12 +57,15 @@ export const build: Command = async (config, args) => {
       },
       output: {
         path: appBuildPath,
-        targetEnv: "library-node",
+        targetEnv: "node-next",
       },
+      external: ["^[^\/\\.(syo:)].*", "solid-js", "seroval"], // FIXME: not perfect
       mode: "production",
       presetEnv: false, // to enable, install core-js
       minify: false,
       treeShaking: false,
+      lazyCompilation: false,
+      // sourcemap: false,
     },
     plugins: [
       ...[
