@@ -16,7 +16,8 @@ export const build = async (userConfig: Config): Promise<void> => {
   const config: InternalConfig = {
     ...userConfig,
     internal: {
-      srcDir: userConfig.srcDir ?? "pages"
+      srcDir: userConfig.srcDir ?? "pages",
+      basePath: userConfig.basePath ?? "/",
     }
   }
 
