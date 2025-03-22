@@ -55,12 +55,12 @@ export const build: Command = async (config, args) => {
       },
       output: {
         path: appBuildPath,
-        targetEnv: "browser-esnext",
+        targetEnv: "library-node",
       },
       mode: "production",
       presetEnv: false, // to enable, install core-js
-      minify: false, // debug
-      sourcemap: false, // debug
+      minify: false,
+      treeShaking: false,
     },
     plugins: [
       ...[
