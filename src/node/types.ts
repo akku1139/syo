@@ -25,5 +25,6 @@ export type FarmJSPlugin = (args: {
 export type InternalConfig = Config & {
   internal: {
     srcDir: string
+    basePath: string
   }
 }
