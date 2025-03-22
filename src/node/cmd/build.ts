@@ -51,7 +51,7 @@ export const build: Command = async (config, args) => {
   await farmBuild({
     compilation: {
       input: {
-        index: path.resolve(import.meta.dirname, "../../src/client/App.tsx")
+        index: path.resolve(import.meta.dirname, "../../../src/client/App.tsx")
       },
       output: {
         path: appBuildPath,

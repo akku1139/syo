@@ -28,7 +28,7 @@ export default ((props?: { url?: string, base?: string }) =>
         routes
       }</Router>
     </div>
-    {/* <script src="./entry.tsx" type="module" defer /> */}
+    <script src="./entry.tsx" type="module" defer />
   </body>
 </html>) satisfies App
 
