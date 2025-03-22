@@ -1,25 +1,28 @@
 import * as fs from "node:fs/promises"
-import { type Config } from "./config.ts"
 import { build as farmBuild, type JsPlugin } from "@farmfe/core"
 // import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
-// import solidPlugin from "vite-plugin-solid"
 import solidPlugin from "@farmfe/js-plugin-solid"
 import * as process from "node:process"
-import type { FarmJSPlugin, InternalConfig } from "./types.ts"
-import { routingPlugin } from "./farm-plugins/routing.ts"
+import type { FarmJSPlugin, Command } from "../types.ts"
+import { routingPlugin } from "../farm-plugins/routing.ts"
 import mdxPlugin from "@farmfe/plugin-mdx"
-import { prerenderPluginLoad, prerenderPluginTransform } from "./farm-plugins/prerender.ts"
+import { parseArgs } from "node:util"
+import * as path from "node:path"
 
-export const build = async (userConfig: Config): Promise<void> => {
+export const build: Command = async (config, args) => {
   process.env.NODE_ENV = "production"
 
-  const config: InternalConfig = {
-    ...userConfig,
-    internal: {
-      srcDir: userConfig.srcDir ?? "pages",
-      basePath: userConfig.basePath ?? "/",
-    }
-  }
+  const cliArgs = parseArgs({
+    args,
+    options: {
+      basePath: {
+        type: "string",
+      }
+    },
+  })
+
+  config.internal.basePath = cliArgs.values.basePath ?? config.internal.basePath
+  config.basePath = cliArgs.values.basePath ?? config.basePath
 
   const srcs = await Array.fromAsync(fs.glob(`${config.internal.srcDir}/**/*.md`))
   const routes: Parameters<FarmJSPlugin>[0]["routes"] = srcs.map(src => {
@@ -36,7 +39,7 @@ export const build = async (userConfig: Config): Promise<void> => {
   await farmBuild({
     compilation: {
       input: {
-        ...Object.fromEntries(routes.map(r=>[r[0], r[1]+"?html"])),
+        index: path.resolve(import.meta.dirname, "../../src/client/index.html")
       },
       output: {
         path: config.distDir ?? "dist",
@@ -60,7 +63,6 @@ export const build = async (userConfig: Config): Promise<void> => {
     plugins: [
       ...[
         routingPlugin,
-        prerenderPluginLoad, prerenderPluginTransform,
       ].map(p => p({ config, routes })),
       mdxPlugin({
         jsx: true, jsxImportSource: "solid-js",

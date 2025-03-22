@@ -28,3 +28,5 @@ export type InternalConfig = Config & {
     basePath: string
   }
 }
+
+export type Command = (userConfig: InternalConfig, args: Array<string>) => Promise<void>

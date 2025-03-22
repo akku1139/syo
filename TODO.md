@@ -41,6 +41,8 @@
 
 # fix null char error
 
+https://github.com/farm-fe/farm/issues/2125
+
 ```ts
 /syo # FARM_DEBUG_HTML_MINIFY=1 pnpm run docs
 
@@ -78,3 +80,13 @@ const VIRTUAL_PREFIX: &str = "\0virtual:";
 # tsconfig for client code
 
 - https://swc.rs/docs/migrating-from-tsc
+
+# `source-map-support`
+
+# Support Windows ?
+
+# Vite-like commandline args
+
+- https://ja.vite.dev/guide/cli
+
+# `basePath` `baseURL`
