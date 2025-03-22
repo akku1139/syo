@@ -21,7 +21,11 @@ export const prerenderPluginLoad: FarmJSPlugin = ({ config }) => ({
             const App = (await import(${JSON.stringify(path.resolve(import.meta.dirname, "../../../src/client/App.tsx"))})).default
             return <App
               base=${JSON.stringify(config.basePath)}
-              url=${JSON.stringify(param.resolvedPath.replace(new RegExp(`^${path.join(process.cwd(), config.internal.srcDir)}/`), config.internal.basePath).replace(/\.md$/, "").replace(/\/index$/, "/")}
+              url=${JSON.stringify(param.resolvedPath
+                .replace(new RegExp(`^${path.join(process.cwd(), config.internal.srcDir)}/`), config.internal.basePath)
+                .replace(/\.md$/, "")
+                .replace(/\/index$/, "/")
+              }
             />
           }
         `,
