@@ -13,8 +13,8 @@ import type { App } from "../node/types.ts"
 //const mod = (await routes[0].component).default
 //export default () => mod
 
-export default ((props?: { url?: string, base?: string }) =>
-<html>
+export default ((props?: { url?: string, base?: string, entry?: string }) => {
+return <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,13 +23,14 @@ export default ((props?: { url?: string, base?: string }) =>
   </head>
   <body>
     <div id="root">
-      <Router url={isServer ? props?.url : ""} base={props?.base} >{
+      <Router url={props?.url} >{ // base={props?.base} url={isServer ? props?.url : ""}
         // routesSignal() // Uncaught TypeError: Comp is not a function
         routes
       }</Router>
     </div>
-    <script src="./entry.tsx" type="module" defer />
+    <script src={props?.entry} type="module" defer />
   </body>
-</html>) satisfies App
+</html>
+}) satisfies App
 
 // TODO: defer vs async

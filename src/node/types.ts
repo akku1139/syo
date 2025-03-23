@@ -33,7 +33,8 @@ export type InternalConfig = Config & {
 
 export type Command = (userConfig: InternalConfig, args: Array<string>) => Promise<void>
 
-export type App = (props?: {
-  url?: string;
-  base?: string;
-}) => JSX.Element
+export type App = (props?: Partial<{
+  url: string
+  base: string
+  entry: string
+}>) => JSX.Element

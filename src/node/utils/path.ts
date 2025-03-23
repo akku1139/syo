@@ -5,4 +5,4 @@ export const rootPath = process.cwd()
 
 export const p = (target: string) => path.resolve(rootPath, target)
 
-export const cacheDir =  path.join(rootPath, "node_modules", ".syo")
+export const cacheDir =  path.resolve(rootPath, "node_modules", ".syo")
