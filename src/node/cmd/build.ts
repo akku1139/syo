@@ -52,6 +52,9 @@ export const build: Command = async (config, args) => {
         path: appBuildPath,
         targetEnv: "browser-esnext", // TODO: use library mode (farm bug)
       },
+      define: {
+        window: "globalThis",
+      },
       external: ["^[^\/\\.(syo:)].*", "solid-js", "seroval"], // FIXME: not perfect
       mode: "production",
       presetEnv: false, // to enable, install core-js
@@ -83,7 +86,7 @@ export const build: Command = async (config, args) => {
       sourcemap: false, // debug
       define: {
         global: "globalThis",
-      }
+      },
     },
     plugins: [
       {
