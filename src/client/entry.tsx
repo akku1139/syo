@@ -1,4 +1,4 @@
-import App from "./App.tsx"
+import { app } from "./Main.tsx"
 import { hydrate } from "solid-js/web"
 
-hydrate(App, document)
+hydrate(app, document)

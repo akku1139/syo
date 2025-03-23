@@ -65,7 +65,7 @@ export const build: Command = async (config, args) => {
 
   logger.info("prerendering")
 
-  const App = (await dynamicImport(path.resolve(appBuildPath, "app.js"))).default as App
+  const App = (await dynamicImport(path.resolve(appBuildPath, "app.js"))).app as App
 
   await farmBuild({
     compilation: {
