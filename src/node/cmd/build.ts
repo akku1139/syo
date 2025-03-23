@@ -46,7 +46,7 @@ export const build: Command = async (config, args) => {
     compilation: {
       input: {
         app: path.resolve(import.meta.dirname, "../../../src/client/App.tsx"),
-        client: path.resolve(import.meta.dirname, "../../../src/client/entry.tsx"),
+        entry: path.resolve(import.meta.dirname, "../../../src/client/entry.tsx"),
       },
       output: {
         path: appBuildPath,
@@ -103,11 +103,8 @@ export const build: Command = async (config, args) => {
 
             logger.info("prerendering: " + url)
 
-            const entry = path.relative(path.relative(process.cwd(), path.dirname(param.resolvedPath)), path.resolve(appBuildPath, "client.js"))
-
-
             const html = "<!DOCTYPE html>"+renderToString(() => App({
-              entry,
+              entry: path.relative(path.relative(process.cwd(), path.dirname(param.resolvedPath)), path.resolve(appBuildPath, "entry.js")),
               base: config.internal.basePath,
               url,
             }))
