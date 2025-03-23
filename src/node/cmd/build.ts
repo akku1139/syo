@@ -81,6 +81,9 @@ export const build: Command = async (config, args) => {
       presetEnv: false, // to enable, install core-js
       minify: false, // debug
       sourcemap: false, // debug
+      define: {
+        global: "globalThis",
+      }
     },
     plugins: [
       {
