@@ -9,6 +9,10 @@ import { portNumber } from "../utils/validation.ts"
 // TODO: watch syo.config.js
 
 export const devServer: Command = async (config, args) => {
+  process.env.NODE_ENV = "development"
+
+  config.internal.basePath = "/"
+
   const cliArgs = parseArgs({
     args,
     options: { // https://github.com/farm-fe/farm/blob/7a69a887d9826214f78bcc49165dbe6b56a9f309/packages/core/src/config/types.ts#L165-L170
@@ -59,20 +63,6 @@ export const devServer: Command = async (config, args) => {
       cors: cliArgs.values.cors,
       strictPort: cliArgs.values.strictPort,
     },
-    plugins: [
-      ...commonFarmPlugins(config, routes),
-      {
-        name: "syo devserver entry",
-        transform: {
-          filters: { moduleTypes: ["html"] },
-          async executor(param) {
-              return {
-                moduleType: "html",
-                content: param.content.replaceAll("%entryjspath%", path.relative(path.relative(process.cwd(), path.dirname(param.resolvedPath)), path.resolve(import.meta.dirname, "../../../src/client/entry/dev.tsx")))
-              }
-          },
-        },
-      }
-    ],
+    plugins: commonFarmPlugins(config, routes),
   })
 }
