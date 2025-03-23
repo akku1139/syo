@@ -54,7 +54,8 @@
   "packageManager": "pnpm@10.6.4",
   "pnpm": {
     "patchedDependencies": {
-      "@farmfe/core": "patches/@farmfe__core.patch"
+      "@farmfe/core": "patches/@farmfe__core.patch",
+      "@solidjs/router": "patches/@solidjs__router.patch"
     }
   }
 }

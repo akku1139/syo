@@ -8,6 +8,9 @@ patchedDependencies:
   '@farmfe/core':
     hash: debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac
     path: patches/@farmfe__core.patch
+  '@solidjs/router':
+    hash: 5337b07910f94c4c851d2042963623dac6638d17eccaeb9b1d116ee093e904e0
+    path: patches/@solidjs__router.patch
 
 importers:
 
@@ -30,7 +33,7 @@ importers:
         version: 3.2.1(typescript@5.8.2)
       '@solidjs/router':
         specifier: ^0.15.3
-        version: 0.15.3(solid-js@1.9.5)
+        version: 0.15.3(patch_hash=5337b07910f94c4c851d2042963623dac6638d17eccaeb9b1d116ee093e904e0)(solid-js@1.9.5)
       marked:
         specifier: ^15.0.7
         version: 15.0.7
@@ -2483,7 +2486,7 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@solidjs/router@0.15.3(solid-js@1.9.5)':
+  '@solidjs/router@0.15.3(patch_hash=5337b07910f94c4c851d2042963623dac6638d17eccaeb9b1d116ee093e904e0)(solid-js@1.9.5)':
     dependencies:
       solid-js: 1.9.5
 
