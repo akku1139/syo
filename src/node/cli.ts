@@ -9,20 +9,14 @@ import { devServer } from "./cmd/dev.ts"
 import type { InternalConfig, Command } from "./types.ts"
 import { crean } from "./cmd/crean.ts"
 import { notImpl } from "./cmd/notimpl.ts"
+import { getInternalConfig } from "./utils/config.ts"
 
 const configFilePath = p("syo.config.js")
 const userConfig = v.parse( ConfigSchema,
   (await dynamicImport(fileURLToPath(new URL(configFilePath, import.meta.url)))).default as unknown
 )
 
-const config: InternalConfig = {
-  ...userConfig,
-  internal: {
-    srcDir: userConfig.srcDir ?? "pages",
-    basePath: userConfig.basePath ?? "/",
-    distDir: userConfig.distDir ?? "dist"
-  }
-}
+const config: InternalConfig = getInternalConfig(userConfig)
 
 // https://github.com/farm-fe/farm/blob/7a69a887d9826214f78bcc49165dbe6b56a9f309/packages/cli/src/index.ts
 const commandMap: Record<string, Command> = {

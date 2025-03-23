@@ -1,14 +1,14 @@
-import * as fs from "node:fs/promises"
 import { build as farmBuild, logger } from "@farmfe/core"
 // import { markdownJSPlugin } from "./farm-plugins/markdown.ts"
 import * as process from "node:process"
-import type { FarmJSPlugin, Command, App } from "../types.ts"
+import type { Command, App } from "../types.ts"
 import { parseArgs } from "node:util"
 import * as path from "node:path"
 import { cacheDir } from "../utils/path.ts"
 import { dynamicImport } from "../../../src/raw/import.js"
 import { renderToString } from "solid-js/web"
 import { commonFarmPlugins } from "../utils/farm.ts"
+import { getRoutes } from "../utils/routes.ts"
 
 export const build: Command = async (config, args) => {
   process.env.NODE_ENV = "production"
@@ -25,13 +25,7 @@ export const build: Command = async (config, args) => {
   config.internal.basePath = cliArgs.values.basePath ?? config.internal.basePath
   config.basePath = cliArgs.values.basePath ?? config.basePath
 
-  const srcs = await Array.fromAsync(fs.glob(`${config.internal.srcDir}/**/*.md`))
-  const routes: Parameters<FarmJSPlugin>[0]["routes"] = srcs.map(src => {
-    return [
-      src.replace(new RegExp(`^${config.internal.srcDir}/`), "").replace(/\.md$/, ""),
-      src,
-    ]
-  })
+  const routes = await getRoutes(config)
 
   const appBuildPath = path.resolve(cacheDir, "app")
 
@@ -46,7 +40,7 @@ export const build: Command = async (config, args) => {
     compilation: {
       input: {
         app: path.resolve(import.meta.dirname, "../../../src/client/App.tsx"),
-        entry: path.resolve(import.meta.dirname, "../../../src/client/entry.tsx"),
+        entry: path.resolve(import.meta.dirname, "../../../src/client/entry/prod.tsx"),
       },
       output: {
         path: appBuildPath,

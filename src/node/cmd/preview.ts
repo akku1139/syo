@@ -1,7 +1,7 @@
 import type { Command } from "../types.ts"
 import { preview as farmPreview } from "@farmfe/core"
 import { parseArgs } from "node:util"
-import * as v from "valibot"
+import { portNumber } from "../utils/validation.ts"
 
 export const crean: Command = async (config, args) => {
   const cliArgs = parseArgs({
@@ -20,12 +20,8 @@ export const crean: Command = async (config, args) => {
     },
   })
 
-  const port = v.parse(v.optional(
-    v.pipe(v.number(), v.integer(), v.minValue(1), v.maxValue(65535))
-  ), cliArgs.values.port)
-
   await farmPreview({
-    port,
+    port: portNumber(cliArgs.values.port),
     open: cliArgs.values.open,
     host: cliArgs.values.host,
     compilation: {
