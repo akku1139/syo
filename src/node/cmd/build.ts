@@ -50,7 +50,7 @@ export const build: Command = async (config, args) => {
       },
       output: {
         path: appBuildPath,
-        targetEnv: "node-next",
+        targetEnv: "browser-esnext", // TODO: use library mode (farm bug)
       },
       external: ["^[^\/\\.(syo:)].*", "solid-js", "seroval"], // FIXME: not perfect
       mode: "production",
