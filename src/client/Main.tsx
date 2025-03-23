@@ -35,3 +35,8 @@ return <html>
 
 // TODO: defer vs async
 // defer will be deleted in Farm
+
+// FIXME: Farm bug
+// An error occurs when adding a file imported from a file set by input to input.
+// input: { app: "App.tsx", entry: "entry.tsx" }
+// entry.tsx: import App from "./App.tsx"
