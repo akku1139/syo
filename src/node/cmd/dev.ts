@@ -62,6 +62,7 @@ export const devServer: Command = async (config, args) => {
       hmr: cliArgs.values.hmr,
       cors: cliArgs.values.cors,
       strictPort: cliArgs.values.strictPort,
+      spa: true,
     },
     plugins: commonFarmPlugins(config, routes),
   })
