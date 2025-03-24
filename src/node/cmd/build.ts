@@ -44,7 +44,7 @@ export const build: Command = async (config, args) => {
       },
       output: {
         path: appBuildPath,
-        targetEnv: "browser-esnext", // TODO: use library mode (farm bug)
+        targetEnv: "library",
       },
       define: {
         window: "globalThis",
@@ -56,6 +56,18 @@ export const build: Command = async (config, args) => {
       treeShaking: false,
       lazyCompilation: false,
       sourcemap: false,
+      partialBundling: {
+        enforceResources: [ // FIXME: all bundle
+          {
+            name: "app",
+            test: [".+"],
+          },
+          {
+            name: "entry",
+            test: [".+"],
+          }
+        ],
+      },
     },
     plugins: commonFarmPlugins(config, routes),
   })
