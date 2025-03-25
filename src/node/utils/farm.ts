@@ -1,8 +1,9 @@
 import type { UserConfig, JsPlugin } from "@farmfe/core"
 import mdxPlugin from "@farmfe/plugin-mdx"
 import { routingPlugin } from "../farm-plugins/routing.ts"
-import type { FarmJSPlugin, InternalConfig } from "../types.ts"
+import type { FarmJSPlugin } from "../types.ts"
 import solidPlugin from "@farmfe/js-plugin-solid"
+import type { ParsedConfig } from "./config.ts"
 
 const solidOptions: Exclude<Parameters<typeof solidPlugin>[0], undefined>["solid"] = {
   hydratable: true,
@@ -10,7 +11,7 @@ const solidOptions: Exclude<Parameters<typeof solidPlugin>[0], undefined>["solid
   // https://github.com/solidjs/solid/blob/41fa6c14b4bf71eed593303cd63b32d53e3515e9/packages/solid-ssr/examples/ssg/rollup.config.js
 }
 
-export const commonFarmPlugins = (config: InternalConfig, routes: Parameters<FarmJSPlugin>[0]["routes"]): Exclude<UserConfig["plugins"], undefined> => [
+export const commonFarmPlugins = (config: ParsedConfig, routes: Parameters<FarmJSPlugin>[0]["routes"]): Exclude<UserConfig["plugins"], undefined> => [
   ...[
     routingPlugin,
   ].map(p => p({ config, routes })),

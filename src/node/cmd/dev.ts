@@ -11,7 +11,7 @@ import { portNumber } from "../utils/validation.ts"
 export const devServer: Command = async (config, args) => {
   process.env.NODE_ENV = "development"
 
-  config.internal.basePath = "/"
+  config.basePath = "/"
 
   const cliArgs = parseArgs({
     args,

@@ -1,3 +1,5 @@
+// It's no longer used.
+
 import * as fs from "node:fs/promises"
 import * as fsSync from "node:fs"
 

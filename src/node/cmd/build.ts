@@ -22,7 +22,7 @@ export const build: Command = async (config, args) => {
     },
   })
 
-  config.internal.basePath = cliArgs.values.basePath ?? config.internal.basePath
+  config.basePath = cliArgs.values.basePath ?? config.basePath
   config.basePath = cliArgs.values.basePath ?? config.basePath
 
   const routes = await getRoutes(config)
@@ -30,9 +30,6 @@ export const build: Command = async (config, args) => {
   const appBuildPath = path.resolve(cacheDir, "app")
 
   // main logic
-
-  // await fs.rm(config.internal.distDir, { recursive: true, force: true })
-  // await fs.mkdir(config.internal.distDir, { recursive: true })
 
   logger.info("building")
 
@@ -82,7 +79,7 @@ export const build: Command = async (config, args) => {
         ...Object.fromEntries(routes),
       },
       output: {
-        path: config.internal.distDir,
+        path: config.distDir,
         publicPath: config.basePath,
         targetEnv: "browser-esnext",
       },
@@ -110,14 +107,14 @@ export const build: Command = async (config, args) => {
           filters: { moduleTypes: ["phonymd"] },
           async executor(param) {
             const url = param.resolvedPath
-              .replace(new RegExp(`^${path.resolve(process.cwd(), config.internal.srcDir)}/`), config.internal.basePath)
+              .replace(new RegExp(`^${path.resolve(process.cwd(), config.srcDir)}/`), config.basePath)
               .replace(/\.mdx?$/, "").replace(/\/index$/, "/")
 
             logger.info("prerendering: " + url)
 
             const html = "<!DOCTYPE html>"+renderToString(() => App({
               entry: path.relative(path.relative(process.cwd(), path.dirname(param.resolvedPath)), path.resolve(appBuildPath, "entry.js")),
-              base: config.internal.basePath,
+              base: config.basePath,
               url,
             }))
 

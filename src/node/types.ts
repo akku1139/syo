@@ -1,5 +1,5 @@
 import type { JsPlugin } from "@farmfe/core"
-import type { Config } from "./config.ts"
+import type { ParsedConfig } from "./utils/config.ts"
 import type { JSX } from "solid-js"
 
 export type PageData = {
@@ -15,7 +15,7 @@ export type PageData = {
 
 export type SourceProcessor = (sourceText: string) => PageData | Promise<PageData>
 export type FarmJSPlugin = (args: {
-  config: InternalConfig
+  config: ParsedConfig
   /** [URL path, file name] */
   routes: Array<[
     string,
@@ -23,15 +23,7 @@ export type FarmJSPlugin = (args: {
   ]>
 }) => JsPlugin
 
-export type InternalConfig = Config & {
-  internal: {
-    srcDir: string
-    basePath: string
-    distDir: string
-  }
-}
-
-export type Command = (userConfig: InternalConfig, args: Array<string>) => Promise<void>
+export type Command = (userConfig: ParsedConfig, args: Array<string>) => Promise<void>
 
 export type App = (props?: Partial<{
   url: string

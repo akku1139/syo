@@ -26,7 +26,7 @@ export const crean: Command = async (config, args) => {
     host: cliArgs.values.host,
     compilation: {
       output: {
-        path: config.internal.distDir,
+        path: config.distDir,
       },
     },
   })
