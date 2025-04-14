@@ -18,10 +18,10 @@ importers:
     dependencies:
       '@farmfe/core':
         specifier: ^1.7.1
-        version: 1.7.2(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
+        version: 1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
       '@farmfe/js-plugin-solid':
         specifier: ^2.12.0
-        version: 2.12.0(@farmfe/core@1.7.2(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)
+        version: 2.12.0(@farmfe/core@1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)
       '@farmfe/plugin-mdx':
         specifier: ^0.0.7
         version: 0.0.7
@@ -251,62 +251,62 @@ packages:
   '@changesets/write@0.4.0':
     resolution: {integrity: sha512-CdTLvIOPiCNuH71pyDu3rA+Q0n65cmAbXnwWH84rKGiFumFzkmHNT8KHTMEchcxN+Kl8I54xGUhJ7l3E7X396Q==}
 
-  '@farmfe/core-darwin-arm64@1.7.2':
-    resolution: {integrity: sha512-E0rzh7NOBoAZIV7pEQ7S7U8BL26YCsI2lBCtzxi57JI2NkO0PPUhMNhfpzaxErhPkuIs0n0hmp3hlxyLDX1Hxg==}
+  '@farmfe/core-darwin-arm64@1.7.3':
+    resolution: {integrity: sha512-vy+KVXN2A+sYSHijAs0H7WoB5Ix4ZKX3GXiKyBSzHPQx3ttiy6vvvAjOld7sWJzmWCC9pVERtMXWBHoiOhkZsg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@farmfe/core-darwin-x64@1.7.2':
-    resolution: {integrity: sha512-sn34XfsexSZz7bDfRYsMDUBmNDQgaxfqYN9pjC4xuECSiHSrlAGZ6JDqy0+GE395UoChVBYTdKVqlKcS7KKZuw==}
+  '@farmfe/core-darwin-x64@1.7.3':
+    resolution: {integrity: sha512-NlrvLsdZtRzZWZVM8S9IYl+jRhAoA6wwzrkTocg9Cj3cRZ3ICOGx+tYOQLlHeVN1zJHe4raFJ86xWiQTJJplrg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@farmfe/core-linux-arm64-gnu@1.7.2':
-    resolution: {integrity: sha512-tMhJ+e5R1av6M9xq4I553lk+gw6Iwr9HCaYeG964FKJFNrwNIe2Yoenv8l8a5Fa4Y+zUWZ9pxMh996Ma0YtdJA==}
+  '@farmfe/core-linux-arm64-gnu@1.7.3':
+    resolution: {integrity: sha512-j1E519tQYrmRyUz7+CKeIdUbMFRhk4Ozq19UFWSnZgeXc01msoCG+G6loMDGqXE0DcqIX9U7xk2OS/Zg9+W+2Q==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/core-linux-arm64-musl@1.7.2':
-    resolution: {integrity: sha512-H5DKYtyfE5nmnYj610KEuDiqNA8x+rJct8lSTt/DvjatW/JNDgzMD0b6ObKJEatYxYu4Cp2GQAldutk+joednA==}
+  '@farmfe/core-linux-arm64-musl@1.7.3':
+    resolution: {integrity: sha512-CtrWNvsoCk2UgZa2D6x/2/mwrU4BxbUN/PAC1rHfg8X3tu9QywskZtZvG4Znef5HzMLePdA/MnqzKjUdlXi+3Q==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/core-linux-x64-gnu@1.7.2':
-    resolution: {integrity: sha512-MAMm8d/qyb4N9NS5zlSs+gxsaoA+FreGn1t4mGFhaoP86gDAo3iIRBNL2HoCfE8aTGJJ7BdaOrWCHejd0cST6Q==}
+  '@farmfe/core-linux-x64-gnu@1.7.3':
+    resolution: {integrity: sha512-n73338Vs65XlFw6O9lRRQv4WOQ8PmZcp5qoVGXri24MmAGNo/AFPrsPYDLXa89Hf1KVSPzp484yR1gXcyeaJLw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/core-linux-x64-musl@1.7.2':
-    resolution: {integrity: sha512-zJLMEsMToe/6CqaYyivZS+TWupD+7NH9n3++0iREqiKTcz7BIDSvHKmKr3p0ygMW7IahdFQCOwinxPbpSiyzPQ==}
+  '@farmfe/core-linux-x64-musl@1.7.3':
+    resolution: {integrity: sha512-nh0fNB2vaxYi69XNEredgt6zddqv1cNBldcV2vxB1IgmT/gp7QhYfzqRJW93B9OrBNLwp+Xjr04DWaZmKYek5g==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/core-win32-arm64-msvc@1.7.2':
-    resolution: {integrity: sha512-3QoE8SOT8Ph4gT+GCkQCRC5xHIngiuSXiz8KHcqe1oSvyAjd4POXgDtMKf6GtLELwoKNtJNTNABOCLyTlawGGA==}
+  '@farmfe/core-win32-arm64-msvc@1.7.3':
+    resolution: {integrity: sha512-9NCHnUsbNMQiN3LUKSLFfnqWEm+7pRofpP6FJit339jXMwzgfo1hzeGie3BYDHyWin39445zZP75h/VJ23FCHA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@farmfe/core-win32-ia32-msvc@1.7.2':
-    resolution: {integrity: sha512-jNITTBiwWWAauS3aGvkKC9AS8+3djsfFmnrF/oI3lLe5OqN9bt9by7baS9sUc3h3Xrwl1SVJZgPqakv0vWXNww==}
+  '@farmfe/core-win32-ia32-msvc@1.7.3':
+    resolution: {integrity: sha512-/KsKmIpKi84soB/ngY+uUoZJXa3XKvl/odNy0lO8lHC6zrBFRg0Dp/0XCYaQGVnFjwgMjMU7FZHNBvG0G+XIaA==}
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
 
-  '@farmfe/core-win32-x64-msvc@1.7.2':
-    resolution: {integrity: sha512-EBSsB3YCI3LyPJLvYMd+ZXNpj8t8ZYWR1Zgt28CAolZK6eXUvzJRU0y5QVx7qLZz0qxJvE8a3Gy7/8IAkVnnaw==}
+  '@farmfe/core-win32-x64-msvc@1.7.3':
+    resolution: {integrity: sha512-ammgj4GQXmHJy9vyvtd8bjQhPnWaOOpz0MHvuxUhczBxBNvzwARK1is0+v6EsZi9rTTJ8eWwn58Q5twiApYp3w==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@farmfe/core@1.7.2':
-    resolution: {integrity: sha512-HN8YaQJvVBBodqzvq5eFfqbX7ueNsdBvSS8IsTiOZkFlnPr6mikvt5UIySkWHa110yAEdKCuGMCTWedNANzXDQ==}
+  '@farmfe/core@1.7.3':
+    resolution: {integrity: sha512-+WfcgEvDtPM2Vfh2tAM0qJiaecLseMOCUN/XQbiW9wPWsWP5iaBEyQsXgNkwZJLvvDBkiglOgjN0XCxh+wJW0g==}
     engines: {node: '>=16.15.1'}
 
   '@farmfe/js-plugin-solid@2.12.0':
@@ -627,8 +627,8 @@ packages:
     peerDependencies:
       solid-js: ^1.8.6
 
-  '@swc/helpers@0.5.15':
-    resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
+  '@swc/helpers@0.5.17':
+    resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -750,8 +750,8 @@ packages:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
 
-  caniuse-lite@1.0.30001712:
-    resolution: {integrity: sha512-MBqPpGYYdQ7/hfKiet9SCI+nmN5/hp4ZzveOJubl5DTAMa5oggjAuoi0Z4onBpKPFI2ePGnQuQIzF3VxDjDJig==}
+  caniuse-lite@1.0.30001713:
+    resolution: {integrity: sha512-wCIWIg+A4Xr7NfhTuHdX+/FKh3+Op3LBbSp2N5Pfx6T/LhdQy3GTyoTg48BReaW/MyMNZAkTadsBtai3ldWK0Q==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -879,8 +879,8 @@ packages:
     resolution: {integrity: sha512-zIHwmZPRshsCdpMDyVsqGmgyP0yT8GAgXUnkdAoJisxvf33k7yO6OuoKmcTGuXPWSsm8Oh88nZicRLA9Y0rUeA==}
     engines: {node: '>=12'}
 
-  dotenv@16.4.7:
-    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
@@ -890,8 +890,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.132:
-    resolution: {integrity: sha512-QgX9EBvWGmvSRa74zqfnG7+Eno0Ak0vftBll0Pt2/z5b3bEGYL6OUXLgKPtvx73dn3dvwrlyVkjPKRRlhLYTEg==}
+  electron-to-chromium@1.5.136:
+    resolution: {integrity: sha512-kL4+wUTD7RSA5FHx5YwWtjDnEEkIIikFgWHR4P6fqjw1PPLlqYkxeOb++wAauAssat0YClCy8Y3C5SxgSkjibQ==}
 
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -1133,8 +1133,8 @@ packages:
     resolution: {integrity: sha512-Kpk9Sm7NmI+RHhnj6OIWDI1d6fIoFAtFt9RLaTMRlg/8w49juAStsrBgp0Dp4OdxdVbRIeKhtCUvoi/RuAhO4g==}
     engines: {node: '>= 0.6'}
 
-  http-proxy-middleware@3.0.3:
-    resolution: {integrity: sha512-usY0HG5nyDUwtqpiZdETNbmKtw3QQ1jwYFZ9wi5iHzX2BcILwQKtYDJPo7XHTsu5Z0B2Hj3W9NNnbd+AjFWjqg==}
+  http-proxy-middleware@3.0.5:
+    resolution: {integrity: sha512-GLZZm1X38BPY4lkXA01jhwxvDoOkkXqjgVyUzVxiEK4iuRu03PZoYHhHRwxnfhQMDuaxi3vVri0YgSro/1oWqg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
   http-proxy@1.18.1:
@@ -2155,51 +2155,51 @@ snapshots:
       human-id: 4.1.1
       prettier: 2.8.8
 
-  '@farmfe/core-darwin-arm64@1.7.2':
+  '@farmfe/core-darwin-arm64@1.7.3':
     optional: true
 
-  '@farmfe/core-darwin-x64@1.7.2':
+  '@farmfe/core-darwin-x64@1.7.3':
     optional: true
 
-  '@farmfe/core-linux-arm64-gnu@1.7.2':
+  '@farmfe/core-linux-arm64-gnu@1.7.3':
     optional: true
 
-  '@farmfe/core-linux-arm64-musl@1.7.2':
+  '@farmfe/core-linux-arm64-musl@1.7.3':
     optional: true
 
-  '@farmfe/core-linux-x64-gnu@1.7.2':
+  '@farmfe/core-linux-x64-gnu@1.7.3':
     optional: true
 
-  '@farmfe/core-linux-x64-musl@1.7.2':
+  '@farmfe/core-linux-x64-musl@1.7.3':
     optional: true
 
-  '@farmfe/core-win32-arm64-msvc@1.7.2':
+  '@farmfe/core-win32-arm64-msvc@1.7.3':
     optional: true
 
-  '@farmfe/core-win32-ia32-msvc@1.7.2':
+  '@farmfe/core-win32-ia32-msvc@1.7.3':
     optional: true
 
-  '@farmfe/core-win32-x64-msvc@1.7.2':
+  '@farmfe/core-win32-x64-msvc@1.7.3':
     optional: true
 
-  '@farmfe/core@1.7.2(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)':
+  '@farmfe/core@1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)':
     dependencies:
       '@farmfe/runtime': 0.12.10
       '@farmfe/runtime-plugin-hmr': 3.5.10
       '@farmfe/runtime-plugin-import-meta': 0.2.3
       '@farmfe/utils': 0.1.0
       '@koa/cors': 5.0.0
-      '@swc/helpers': 0.5.15
+      '@swc/helpers': 0.5.17
       chokidar: 3.6.0
       deepmerge: 4.3.1
-      dotenv: 16.4.7
+      dotenv: 16.5.0
       dotenv-expand: 11.0.7
       execa: 7.2.0
       farm-browserslist-generator: 1.0.5
       farm-plugin-replace-dirname: 0.2.1
       fast-glob: 3.3.3
       fs-extra: 11.3.0
-      http-proxy-middleware: 3.0.3
+      http-proxy-middleware: 3.0.5
       is-plain-object: 5.0.0
       koa: 2.16.1
       koa-compress: 5.1.1
@@ -2212,25 +2212,25 @@ snapshots:
       zod: 3.24.2
       zod-validation-error: 1.5.0(zod@3.24.2)
     optionalDependencies:
-      '@farmfe/core-darwin-arm64': 1.7.2
-      '@farmfe/core-darwin-x64': 1.7.2
-      '@farmfe/core-linux-arm64-gnu': 1.7.2
-      '@farmfe/core-linux-arm64-musl': 1.7.2
-      '@farmfe/core-linux-x64-gnu': 1.7.2
-      '@farmfe/core-linux-x64-musl': 1.7.2
-      '@farmfe/core-win32-arm64-msvc': 1.7.2
-      '@farmfe/core-win32-ia32-msvc': 1.7.2
-      '@farmfe/core-win32-x64-msvc': 1.7.2
+      '@farmfe/core-darwin-arm64': 1.7.3
+      '@farmfe/core-darwin-x64': 1.7.3
+      '@farmfe/core-linux-arm64-gnu': 1.7.3
+      '@farmfe/core-linux-arm64-musl': 1.7.3
+      '@farmfe/core-linux-x64-gnu': 1.7.3
+      '@farmfe/core-linux-x64-musl': 1.7.3
+      '@farmfe/core-win32-arm64-msvc': 1.7.3
+      '@farmfe/core-win32-ia32-msvc': 1.7.3
+      '@farmfe/core-win32-x64-msvc': 1.7.3
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
 
-  '@farmfe/js-plugin-solid@2.12.0(@farmfe/core@1.7.2(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)':
+  '@farmfe/js-plugin-solid@2.12.0(@farmfe/core@1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.10)
-      '@farmfe/core': 1.7.2(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
+      '@farmfe/core': 1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
       '@rollup/pluginutils': 5.1.4(rollup@4.36.0)
       babel-preset-solid: 1.9.5(@babel/core@7.26.10)
       merge-anything: 5.1.7
@@ -2508,7 +2508,7 @@ snapshots:
     dependencies:
       solid-js: 1.9.5
 
-  '@swc/helpers@0.5.15':
+  '@swc/helpers@0.5.17':
     dependencies:
       tslib: 2.8.1
 
@@ -2602,8 +2602,8 @@ snapshots:
 
   browserslist@4.24.4:
     dependencies:
-      caniuse-lite: 1.0.30001712
-      electron-to-chromium: 1.5.132
+      caniuse-lite: 1.0.30001713
+      electron-to-chromium: 1.5.136
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -2630,7 +2630,7 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
 
-  caniuse-lite@1.0.30001712: {}
+  caniuse-lite@1.0.30001713: {}
 
   ccount@2.0.1: {}
 
@@ -2733,9 +2733,9 @@ snapshots:
 
   dotenv-expand@11.0.7:
     dependencies:
-      dotenv: 16.4.7
+      dotenv: 16.5.0
 
-  dotenv@16.4.7: {}
+  dotenv@16.5.0: {}
 
   dunder-proto@1.0.1:
     dependencies:
@@ -2745,7 +2745,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.132: {}
+  electron-to-chromium@1.5.136: {}
 
   emoji-regex-xs@1.0.0: {}
 
@@ -2815,7 +2815,7 @@ snapshots:
       '@types/semver': 7.7.0
       '@types/ua-parser-js': 0.7.39
       browserslist: 4.24.4
-      caniuse-lite: 1.0.30001712
+      caniuse-lite: 1.0.30001713
       isbot: 3.8.0
       object-path: 0.11.8
       semver: 7.7.1
@@ -3007,7 +3007,7 @@ snapshots:
       statuses: 1.5.0
       toidentifier: 1.0.1
 
-  http-proxy-middleware@3.0.3:
+  http-proxy-middleware@3.0.5:
     dependencies:
       '@types/http-proxy': 1.17.16
       debug: 4.4.0
