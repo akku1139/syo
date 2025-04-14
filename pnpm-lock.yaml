@@ -26,8 +26,8 @@ importers:
         specifier: ^0.0.7
         version: 0.0.7
       '@farmfe/plugin-virtual':
-        specifier: ^0.0.10
-        version: 0.0.10
+        specifier: ^0.0.12
+        version: 0.0.12
       '@shikijs/twoslash':
         specifier: ^3.2.1
         version: 3.2.1(typescript@5.8.3)
@@ -371,62 +371,62 @@ packages:
   '@farmfe/plugin-mdx@0.0.7':
     resolution: {integrity: sha512-eKsh7q2QEsG7k+zvkxoptNlkld/qmfFfXfhU3+dN4o5PwYIhXVPSTkMicrhdWGD5sMjA420HMjXk69nUop+xAQ==}
 
-  '@farmfe/plugin-virtual-darwin-arm64@0.0.10':
-    resolution: {integrity: sha512-gU6p9QKXlC/zepQfoQJAHxPlZYKiWBhs/ZUMtn5Zrsuv+XnM6Uoq1AbtB0FSl4Vw6I5dqcci48iV9A6LyFKSLA==}
+  '@farmfe/plugin-virtual-darwin-arm64@0.0.12':
+    resolution: {integrity: sha512-KVaZnMN0PycJnP0qNVNjzmZDVtyj3NqEAu+U9vEcGZ5Rb9HPIF616iIW9KhfKSkdOs5RUaDwwFxSKhxJgQWqtA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@farmfe/plugin-virtual-darwin-x64@0.0.10':
-    resolution: {integrity: sha512-TsrhvtnVp3OI7sz8wmghtJ2iL6Paz7A4EiYRFuhHuZkPbygbniD/FgPXDclwdeZcC4siZ9pB7TlPa5UQWjoWgQ==}
+  '@farmfe/plugin-virtual-darwin-x64@0.0.12':
+    resolution: {integrity: sha512-j0B/2rmMrYUwwrQ0ZCrKedwceE7WeEr6uiQ23exTUQ8T+/4AcSXwziOIUuqWsYewNnNwwsJIZVo3vMgsTZgNQA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@farmfe/plugin-virtual-linux-arm64-gnu@0.0.10':
-    resolution: {integrity: sha512-xM4vaomJ54LNPpCM7c0+huWGxtoXOUckqJKa0GtBIFmrbHcDSwfVVRd1ROWQuFQmHZ7d0Oz66MqPbdmZkt8mMg==}
+  '@farmfe/plugin-virtual-linux-arm64-gnu@0.0.12':
+    resolution: {integrity: sha512-WI1WGBFCgo9oRi0ihHKTGvAs0ZAfyUeV3Vm1Ldkhmx3mmuDETVnuD4adpeSRDSuYVaXZKOF75LEyVrlfk3aEHg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/plugin-virtual-linux-arm64-musl@0.0.10':
-    resolution: {integrity: sha512-xFeB0fU1J5ELvJ8HGHYqkVbWqFh+oH8U2Jo9u6KPZyWCPLKVetQvlEm5E/JSw/wBTUKptlMXKj5hVlq93pYTdQ==}
+  '@farmfe/plugin-virtual-linux-arm64-musl@0.0.12':
+    resolution: {integrity: sha512-CHBmRm6tDlmLwf24r7StTxnLJd2Hd2VFU0lveVXlPleG3XwgSGA3pG7rZCu7bDBk66xJDNHTUE+zQTmMcOZbuw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/plugin-virtual-linux-x64-gnu@0.0.10':
-    resolution: {integrity: sha512-IkqZh3u3QWSdTuSE4F9oywEaxxxj9aajojXyp1xt8LOOK+E9kvTBvz2Uxboepyvs8f0XhZwVCKmYSUsDhNw/jg==}
+  '@farmfe/plugin-virtual-linux-x64-gnu@0.0.12':
+    resolution: {integrity: sha512-cZku0WCKqCfoBdvd7PexUmzieo6gekWx7ieIZ/7CF+6TyxYYzA8bNU4JnjVceKV2gKwP1nU2u77D6sMcRyp0Lw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/plugin-virtual-linux-x64-musl@0.0.10':
-    resolution: {integrity: sha512-RXPcuZ5NWHj8KgTfyalxhH3DFLiEvyaNgoYk/0pk+fuF3zyYNv4H/SVJnxNjRET/qbM0yTW7O5V9u8l+5w8IYw==}
+  '@farmfe/plugin-virtual-linux-x64-musl@0.0.12':
+    resolution: {integrity: sha512-UFk7vFC61Xrt2IA++3yvJDL1EHTn4Ji3duNAOU1kOgY+ekCkKGsF7d4+gvuzdY6uSD8PR+VpO8NkOgDypUXFVA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/plugin-virtual-win32-arm64-msvc@0.0.10':
-    resolution: {integrity: sha512-9+E+E7AacZlDLUXzmBUoBD8ZSnQEqeX6i8nkSVk/kBWZG4K3sX0VViL2GmlkFIjqyStFf70RZFMYW28oPGUv3Q==}
+  '@farmfe/plugin-virtual-win32-arm64-msvc@0.0.12':
+    resolution: {integrity: sha512-N+36ki/iUa/QgSrG5HBwWmJZ2n9Z3MmfjZf6zVb8sxngAQL4Wq78e01L6i4eoL4FxGw+2B7zJY4wl5eA41/okA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@farmfe/plugin-virtual-win32-ia32-msvc@0.0.10':
-    resolution: {integrity: sha512-ZEUS8ySJMIgtvVrsEXqiRIzIXR0kr9JXjhmSGXSpdTfAGhzxQxncF78qnOGFkTqOnqc6eoPB/RIByO64/VhtbQ==}
+  '@farmfe/plugin-virtual-win32-ia32-msvc@0.0.12':
+    resolution: {integrity: sha512-cudxOuhLWdwbv7NYxDM5pGMvsDZGQF1dp3mDDpgGC5xb/z9cUiVYeYbmFHdM8Y7eoixDqcSXinkF4aPxSKnnYA==}
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
 
-  '@farmfe/plugin-virtual-win32-x64-msvc@0.0.10':
-    resolution: {integrity: sha512-YNsWeKVPyca8jQNm6NX52a1LduWtrQzxPSu9oYujhzy6l9HMSds9hyhFdJmu7nK+AxKA3OXItQCx1M+neQv1sg==}
+  '@farmfe/plugin-virtual-win32-x64-msvc@0.0.12':
+    resolution: {integrity: sha512-vHC2UJEg86KSsmS5FQW9NFcj7g+AFVW0iA7x9ap8s+B75bNwll83veN0OWwKWQGHX2X4139/UJ3Q+qGDN9tlBQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@farmfe/plugin-virtual@0.0.10':
-    resolution: {integrity: sha512-Hh14alAtjB9Xwhtmnc0WmlAIP4cAYOdgrqiyCvtkqSrTP3/2xj+3i2JS4v9tcRdu/3i2ojR4eSBmjvJ5CcEkpA==}
+  '@farmfe/plugin-virtual@0.0.12':
+    resolution: {integrity: sha512-ff9M86BR22NpRRu0Kb2y593HYlGTVnS5L/1e2OaR1EZR/g7UMhqoTheG87O5BlcE5OX9w8D0SZ8Un5NtxCcHhw==}
 
   '@farmfe/runtime-plugin-hmr@3.5.10':
     resolution: {integrity: sha512-ZFwAGDJ1sNuwX77ADdPSO+PoMImrGl0k+nvW/TnzOy72k8JxC8OwaeOiuPgNkYxDGldp55l9mPE9NvcoxR8uzQ==}
@@ -2273,44 +2273,44 @@ snapshots:
       '@farmfe/plugin-mdx-win32-ia32-msvc': 0.0.7
       '@farmfe/plugin-mdx-win32-x64-msvc': 0.0.7
 
-  '@farmfe/plugin-virtual-darwin-arm64@0.0.10':
+  '@farmfe/plugin-virtual-darwin-arm64@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-darwin-x64@0.0.10':
+  '@farmfe/plugin-virtual-darwin-x64@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-linux-arm64-gnu@0.0.10':
+  '@farmfe/plugin-virtual-linux-arm64-gnu@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-linux-arm64-musl@0.0.10':
+  '@farmfe/plugin-virtual-linux-arm64-musl@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-linux-x64-gnu@0.0.10':
+  '@farmfe/plugin-virtual-linux-x64-gnu@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-linux-x64-musl@0.0.10':
+  '@farmfe/plugin-virtual-linux-x64-musl@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-win32-arm64-msvc@0.0.10':
+  '@farmfe/plugin-virtual-win32-arm64-msvc@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-win32-ia32-msvc@0.0.10':
+  '@farmfe/plugin-virtual-win32-ia32-msvc@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual-win32-x64-msvc@0.0.10':
+  '@farmfe/plugin-virtual-win32-x64-msvc@0.0.12':
     optional: true
 
-  '@farmfe/plugin-virtual@0.0.10':
+  '@farmfe/plugin-virtual@0.0.12':
     optionalDependencies:
-      '@farmfe/plugin-virtual-darwin-arm64': 0.0.10
-      '@farmfe/plugin-virtual-darwin-x64': 0.0.10
-      '@farmfe/plugin-virtual-linux-arm64-gnu': 0.0.10
-      '@farmfe/plugin-virtual-linux-arm64-musl': 0.0.10
-      '@farmfe/plugin-virtual-linux-x64-gnu': 0.0.10
-      '@farmfe/plugin-virtual-linux-x64-musl': 0.0.10
-      '@farmfe/plugin-virtual-win32-arm64-msvc': 0.0.10
-      '@farmfe/plugin-virtual-win32-ia32-msvc': 0.0.10
-      '@farmfe/plugin-virtual-win32-x64-msvc': 0.0.10
+      '@farmfe/plugin-virtual-darwin-arm64': 0.0.12
+      '@farmfe/plugin-virtual-darwin-x64': 0.0.12
+      '@farmfe/plugin-virtual-linux-arm64-gnu': 0.0.12
+      '@farmfe/plugin-virtual-linux-arm64-musl': 0.0.12
+      '@farmfe/plugin-virtual-linux-x64-gnu': 0.0.12
+      '@farmfe/plugin-virtual-linux-x64-musl': 0.0.12
+      '@farmfe/plugin-virtual-win32-arm64-msvc': 0.0.12
+      '@farmfe/plugin-virtual-win32-ia32-msvc': 0.0.12
+      '@farmfe/plugin-virtual-win32-x64-msvc': 0.0.12
 
   '@farmfe/runtime-plugin-hmr@3.5.10':
     dependencies:
