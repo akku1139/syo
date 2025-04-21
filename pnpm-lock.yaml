@@ -18,10 +18,10 @@ importers:
     dependencies:
       '@farmfe/core':
         specifier: ^1.7.1
-        version: 1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
+        version: 1.7.4(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
       '@farmfe/js-plugin-solid':
         specifier: ^2.12.0
-        version: 2.12.0(@farmfe/core@1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)
+        version: 2.12.0(@farmfe/core@1.7.4(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)
       '@farmfe/plugin-mdx':
         specifier: ^0.0.7
         version: 0.0.7
@@ -196,8 +196,8 @@ packages:
     resolution: {integrity: sha512-emqcG3vHrpxUKTrxcblR36dcrcoRDvKmnL/dCL6ZsHaShW80qxCAcNhzQZrpeM765VzEos+xOi4s+r4IXzTwdQ==}
     engines: {node: '>=6.9.0'}
 
-  '@changesets/apply-release-plan@7.0.10':
-    resolution: {integrity: sha512-wNyeIJ3yDsVspYvHnEz1xQDq18D9ifed3lI+wxRQRK4pArUcuHgCTrHv0QRnnwjhVCQACxZ+CBih3wgOct6UXw==}
+  '@changesets/apply-release-plan@7.0.12':
+    resolution: {integrity: sha512-EaET7As5CeuhTzvXTQCRZeBUcisoYPDDcXvgTE/2jmmypKp0RC7LxKj/yzqeh/1qFTZI7oDGFcL1PHRuQuketQ==}
 
   '@changesets/assemble-release-plan@6.0.6':
     resolution: {integrity: sha512-Frkj8hWJ1FRZiY3kzVCKzS0N5mMwWKwmv9vpam7vt8rZjLL1JMthdh6pSDVSPumHPshTTkKZ0VtNbE0cJHZZUg==}
@@ -205,8 +205,8 @@ packages:
   '@changesets/changelog-git@0.2.1':
     resolution: {integrity: sha512-x/xEleCFLH28c3bQeQIyeZf8lFXyDFVn1SgcBiR2Tw/r4IAWlk1fzxCEZ6NxQAjF2Nwtczoen3OA2qR+UawQ8Q==}
 
-  '@changesets/cli@2.28.1':
-    resolution: {integrity: sha512-PiIyGRmSc6JddQJe/W1hRPjiN4VrMvb2VfQ6Uydy2punBioQrsxppyG5WafinKcW1mT0jOe/wU4k9Zy5ff21AA==}
+  '@changesets/cli@2.29.2':
+    resolution: {integrity: sha512-vwDemKjGYMOc0l6WUUTGqyAWH3AmueeyoJa1KmFRtCYiCoY5K3B68ErYpDB6H48T4lLI4czum4IEjh6ildxUeg==}
     hasBin: true
 
   '@changesets/config@3.1.1':
@@ -218,14 +218,14 @@ packages:
   '@changesets/get-dependents-graph@2.1.3':
     resolution: {integrity: sha512-gphr+v0mv2I3Oxt19VdWRRUxq3sseyUpX9DaHpTUmLj92Y10AGy+XOtV+kbM6L/fDcpx7/ISDFK6T8A/P3lOdQ==}
 
-  '@changesets/get-release-plan@4.0.8':
-    resolution: {integrity: sha512-MM4mq2+DQU1ZT7nqxnpveDMTkMBLnwNX44cX7NSxlXmr7f8hO6/S2MXNiXG54uf/0nYnefv0cfy4Czf/ZL/EKQ==}
+  '@changesets/get-release-plan@4.0.10':
+    resolution: {integrity: sha512-CCJ/f3edYaA3MqoEnWvGGuZm0uMEMzNJ97z9hdUR34AOvajSwySwsIzC/bBu3+kuGDsB+cny4FljG8UBWAa7jg==}
 
   '@changesets/get-version-range-type@0.4.0':
     resolution: {integrity: sha512-hwawtob9DryoGTpixy1D3ZXbGgJu1Rhr+ySH2PvTLHvkZuQ7sRT4oQwMh0hbqZH1weAooedEjRsbrWcGLCeyVQ==}
 
-  '@changesets/git@3.0.2':
-    resolution: {integrity: sha512-r1/Kju9Y8OxRRdvna+nxpQIsMsRQn9dhhAZt94FLDeu0Hij2hnOozW8iqnHBgvu+KdnJppCveQwK4odwfw/aWQ==}
+  '@changesets/git@3.0.4':
+    resolution: {integrity: sha512-BXANzRFkX+XcC1q/d27NKvlJ1yf7PSAgi8JG6dt8EfbHFHi4neau7mufcSca5zRhwOL8j9s6EqsxmT+s+/E6Sw==}
 
   '@changesets/logger@0.1.1':
     resolution: {integrity: sha512-OQtR36ZlnuTxKqoW4Sv6x5YIhOmClRd5pWsjZsddYxpWs517R0HkyiefQPIytCVh4ZcC5x9XaG8KTdd5iRQUfg==}
@@ -236,8 +236,8 @@ packages:
   '@changesets/pre@2.0.2':
     resolution: {integrity: sha512-HaL/gEyFVvkf9KFg6484wR9s0qjAXlZ8qWPDkTyKF6+zqjBe/I2mygg3MbpZ++hdi0ToqNUF8cjj7fBy0dg8Ug==}
 
-  '@changesets/read@0.6.3':
-    resolution: {integrity: sha512-9H4p/OuJ3jXEUTjaVGdQEhBdqoT2cO5Ts95JTFsQyawmKzpL8FnIeJSyhTDPW1MBRDnwZlHFEM9SpPwJDY5wIg==}
+  '@changesets/read@0.6.5':
+    resolution: {integrity: sha512-UPzNGhsSjHD3Veb0xO/MwvasGe8eMyNrR/sT9gR8Q3DhOQZirgKhhXv/8hVsI0QpPjR004Z9iFxoJU6in3uGMg==}
 
   '@changesets/should-skip-package@0.1.2':
     resolution: {integrity: sha512-qAK/WrqWLNCP22UDdBTMPH5f41elVDlsNyat180A33dWxuUDyNpg6fPi/FyTZwRriVjg0L8gnjJn2F9XAoF0qw==}
@@ -251,62 +251,62 @@ packages:
   '@changesets/write@0.4.0':
     resolution: {integrity: sha512-CdTLvIOPiCNuH71pyDu3rA+Q0n65cmAbXnwWH84rKGiFumFzkmHNT8KHTMEchcxN+Kl8I54xGUhJ7l3E7X396Q==}
 
-  '@farmfe/core-darwin-arm64@1.7.3':
-    resolution: {integrity: sha512-vy+KVXN2A+sYSHijAs0H7WoB5Ix4ZKX3GXiKyBSzHPQx3ttiy6vvvAjOld7sWJzmWCC9pVERtMXWBHoiOhkZsg==}
+  '@farmfe/core-darwin-arm64@1.7.4':
+    resolution: {integrity: sha512-n5OOGHbjjp+wsWBnqS9kFFAUui+GIS1qntgzneCaLGsxil+jPYJ/ELxVjgwSDvVZVR4E7Mz7YEgMSv2IESCdyg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@farmfe/core-darwin-x64@1.7.3':
-    resolution: {integrity: sha512-NlrvLsdZtRzZWZVM8S9IYl+jRhAoA6wwzrkTocg9Cj3cRZ3ICOGx+tYOQLlHeVN1zJHe4raFJ86xWiQTJJplrg==}
+  '@farmfe/core-darwin-x64@1.7.4':
+    resolution: {integrity: sha512-DBIgfw5HZiT+3VmCo4fJ5mjicKrxrFkbvVORmu3b7ROvDmpsyKPTnfJHmlo3mnTWuCxshM8BOw2BErh3xyjGdg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@farmfe/core-linux-arm64-gnu@1.7.3':
-    resolution: {integrity: sha512-j1E519tQYrmRyUz7+CKeIdUbMFRhk4Ozq19UFWSnZgeXc01msoCG+G6loMDGqXE0DcqIX9U7xk2OS/Zg9+W+2Q==}
+  '@farmfe/core-linux-arm64-gnu@1.7.4':
+    resolution: {integrity: sha512-ExXZxxoByhho/25i6s3wST/Kfb8xb3qAL9HwhCT5zskus6qMmhUy8Ohdk/aOiS7qcDhTY4A6DG3be9TvKL29cA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/core-linux-arm64-musl@1.7.3':
-    resolution: {integrity: sha512-CtrWNvsoCk2UgZa2D6x/2/mwrU4BxbUN/PAC1rHfg8X3tu9QywskZtZvG4Znef5HzMLePdA/MnqzKjUdlXi+3Q==}
+  '@farmfe/core-linux-arm64-musl@1.7.4':
+    resolution: {integrity: sha512-H+AxuL6NZobquYtByc2kRuRDoVzQ9REXiOaUKenlb2F8y4ulLL8rF/xV5GQfz17IGCOGU4R8yiHi1WktwXnBMw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/core-linux-x64-gnu@1.7.3':
-    resolution: {integrity: sha512-n73338Vs65XlFw6O9lRRQv4WOQ8PmZcp5qoVGXri24MmAGNo/AFPrsPYDLXa89Hf1KVSPzp484yR1gXcyeaJLw==}
+  '@farmfe/core-linux-x64-gnu@1.7.4':
+    resolution: {integrity: sha512-oIcaGNXCwkx/D0bhQkjErZc3TMDZS08HlHDg/jElVIyo4JajmK163C+tAGjOfO0XqaJ1DrGp4gT3VkkxC0C1jg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/core-linux-x64-musl@1.7.3':
-    resolution: {integrity: sha512-nh0fNB2vaxYi69XNEredgt6zddqv1cNBldcV2vxB1IgmT/gp7QhYfzqRJW93B9OrBNLwp+Xjr04DWaZmKYek5g==}
+  '@farmfe/core-linux-x64-musl@1.7.4':
+    resolution: {integrity: sha512-/ST5kjRixFqE2BMIuswI3UTBcDw1z3km+75bJjI4PU5VK52H2sServy93pC8fpE8SwvQjd3yrTzmZD15Na3LRA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/core-win32-arm64-msvc@1.7.3':
-    resolution: {integrity: sha512-9NCHnUsbNMQiN3LUKSLFfnqWEm+7pRofpP6FJit339jXMwzgfo1hzeGie3BYDHyWin39445zZP75h/VJ23FCHA==}
+  '@farmfe/core-win32-arm64-msvc@1.7.4':
+    resolution: {integrity: sha512-LlAoBa/kqhnAVCOyxsCRKkQvUQOQxNAJMRQP4aJgHxWRLw1LfHrtNGfBuHSO7Wp2XRA44Qw2TUid6mHd/sqCxA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@farmfe/core-win32-ia32-msvc@1.7.3':
-    resolution: {integrity: sha512-/KsKmIpKi84soB/ngY+uUoZJXa3XKvl/odNy0lO8lHC6zrBFRg0Dp/0XCYaQGVnFjwgMjMU7FZHNBvG0G+XIaA==}
+  '@farmfe/core-win32-ia32-msvc@1.7.4':
+    resolution: {integrity: sha512-Kr+Qzl9KZtF0xwIwMwsMw02Fcgz5migyku6xVcOWorekpBvQtL7r6JHrojitVbw+bjeL1vZGIcXdIyM0xX1WfA==}
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
 
-  '@farmfe/core-win32-x64-msvc@1.7.3':
-    resolution: {integrity: sha512-ammgj4GQXmHJy9vyvtd8bjQhPnWaOOpz0MHvuxUhczBxBNvzwARK1is0+v6EsZi9rTTJ8eWwn58Q5twiApYp3w==}
+  '@farmfe/core-win32-x64-msvc@1.7.4':
+    resolution: {integrity: sha512-yUv+nywAjiByqfRSSsY4X6/K4VlRdJnvxQRKHoIXFzZG9FwEkPEcMmOIGfh7wXcVcBVO8z5qk80Lo8yLQY3FDQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@farmfe/core@1.7.3':
-    resolution: {integrity: sha512-+WfcgEvDtPM2Vfh2tAM0qJiaecLseMOCUN/XQbiW9wPWsWP5iaBEyQsXgNkwZJLvvDBkiglOgjN0XCxh+wJW0g==}
+  '@farmfe/core@1.7.4':
+    resolution: {integrity: sha512-Qa4b8B+lSEKUaahZemqi0cU2wQyH7Q3D0ig69D6GBk4mMCwZNyCu5wTlK12LNFJfhgrdye/WSqt6DOzPqt84Ug==}
     engines: {node: '>=16.15.1'}
 
   '@farmfe/js-plugin-solid@2.12.0':
@@ -744,8 +744,8 @@ packages:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
 
-  caniuse-lite@1.0.30001713:
-    resolution: {integrity: sha512-wCIWIg+A4Xr7NfhTuHdX+/FKh3+Op3LBbSp2N5Pfx6T/LhdQy3GTyoTg48BReaW/MyMNZAkTadsBtai3ldWK0Q==}
+  caniuse-lite@1.0.30001715:
+    resolution: {integrity: sha512-7ptkFGMm2OAOgvZpwgA4yjQ5SQbrNVGdRjzH0pBdy1Fasvcr+KAeECmbCAECzTuDuoX0FCY8KzUxjf9+9kfZEw==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -884,8 +884,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.136:
-    resolution: {integrity: sha512-kL4+wUTD7RSA5FHx5YwWtjDnEEkIIikFgWHR4P6fqjw1PPLlqYkxeOb++wAauAssat0YClCy8Y3C5SxgSkjibQ==}
+  electron-to-chromium@1.5.139:
+    resolution: {integrity: sha512-GGnRYOTdN5LYpwbIr0rwP/ZHOQSvAF6TG0LSzp28uCBb9JiXHJGmaaKw29qjNJc5bGnnp6kXJqRnGMQoELwi5w==}
 
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -1802,8 +1802,8 @@ packages:
     peerDependencies:
       zod: ^3.18.0
 
-  zod@3.24.2:
-    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+  zod@3.24.3:
+    resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -2007,11 +2007,11 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@changesets/apply-release-plan@7.0.10':
+  '@changesets/apply-release-plan@7.0.12':
     dependencies:
       '@changesets/config': 3.1.1
       '@changesets/get-version-range-type': 0.4.0
-      '@changesets/git': 3.0.2
+      '@changesets/git': 3.0.4
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
@@ -2036,19 +2036,19 @@ snapshots:
     dependencies:
       '@changesets/types': 6.1.0
 
-  '@changesets/cli@2.28.1':
+  '@changesets/cli@2.29.2':
     dependencies:
-      '@changesets/apply-release-plan': 7.0.10
+      '@changesets/apply-release-plan': 7.0.12
       '@changesets/assemble-release-plan': 6.0.6
       '@changesets/changelog-git': 0.2.1
       '@changesets/config': 3.1.1
       '@changesets/errors': 0.2.0
       '@changesets/get-dependents-graph': 2.1.3
-      '@changesets/get-release-plan': 4.0.8
-      '@changesets/git': 3.0.2
+      '@changesets/get-release-plan': 4.0.10
+      '@changesets/git': 3.0.4
       '@changesets/logger': 0.1.1
       '@changesets/pre': 2.0.2
-      '@changesets/read': 0.6.3
+      '@changesets/read': 0.6.5
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
@@ -2088,18 +2088,18 @@ snapshots:
       picocolors: 1.1.1
       semver: 7.7.1
 
-  '@changesets/get-release-plan@4.0.8':
+  '@changesets/get-release-plan@4.0.10':
     dependencies:
       '@changesets/assemble-release-plan': 6.0.6
       '@changesets/config': 3.1.1
       '@changesets/pre': 2.0.2
-      '@changesets/read': 0.6.3
+      '@changesets/read': 0.6.5
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
 
   '@changesets/get-version-range-type@0.4.0': {}
 
-  '@changesets/git@3.0.2':
+  '@changesets/git@3.0.4':
     dependencies:
       '@changesets/errors': 0.2.0
       '@manypkg/get-packages': 1.1.3
@@ -2123,9 +2123,9 @@ snapshots:
       '@manypkg/get-packages': 1.1.3
       fs-extra: 7.0.1
 
-  '@changesets/read@0.6.3':
+  '@changesets/read@0.6.5':
     dependencies:
-      '@changesets/git': 3.0.2
+      '@changesets/git': 3.0.4
       '@changesets/logger': 0.1.1
       '@changesets/parse': 0.4.1
       '@changesets/types': 6.1.0
@@ -2149,34 +2149,34 @@ snapshots:
       human-id: 4.1.1
       prettier: 2.8.8
 
-  '@farmfe/core-darwin-arm64@1.7.3':
+  '@farmfe/core-darwin-arm64@1.7.4':
     optional: true
 
-  '@farmfe/core-darwin-x64@1.7.3':
+  '@farmfe/core-darwin-x64@1.7.4':
     optional: true
 
-  '@farmfe/core-linux-arm64-gnu@1.7.3':
+  '@farmfe/core-linux-arm64-gnu@1.7.4':
     optional: true
 
-  '@farmfe/core-linux-arm64-musl@1.7.3':
+  '@farmfe/core-linux-arm64-musl@1.7.4':
     optional: true
 
-  '@farmfe/core-linux-x64-gnu@1.7.3':
+  '@farmfe/core-linux-x64-gnu@1.7.4':
     optional: true
 
-  '@farmfe/core-linux-x64-musl@1.7.3':
+  '@farmfe/core-linux-x64-musl@1.7.4':
     optional: true
 
-  '@farmfe/core-win32-arm64-msvc@1.7.3':
+  '@farmfe/core-win32-arm64-msvc@1.7.4':
     optional: true
 
-  '@farmfe/core-win32-ia32-msvc@1.7.3':
+  '@farmfe/core-win32-ia32-msvc@1.7.4':
     optional: true
 
-  '@farmfe/core-win32-x64-msvc@1.7.3':
+  '@farmfe/core-win32-x64-msvc@1.7.4':
     optional: true
 
-  '@farmfe/core@1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)':
+  '@farmfe/core@1.7.4(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)':
     dependencies:
       '@farmfe/runtime': 0.12.10
       '@farmfe/runtime-plugin-hmr': 3.5.10
@@ -2203,28 +2203,28 @@ snapshots:
       loglevel: 1.9.2
       open: 9.1.0
       ws: 8.18.1
-      zod: 3.24.2
-      zod-validation-error: 1.5.0(zod@3.24.2)
+      zod: 3.24.3
+      zod-validation-error: 1.5.0(zod@3.24.3)
     optionalDependencies:
-      '@farmfe/core-darwin-arm64': 1.7.3
-      '@farmfe/core-darwin-x64': 1.7.3
-      '@farmfe/core-linux-arm64-gnu': 1.7.3
-      '@farmfe/core-linux-arm64-musl': 1.7.3
-      '@farmfe/core-linux-x64-gnu': 1.7.3
-      '@farmfe/core-linux-x64-musl': 1.7.3
-      '@farmfe/core-win32-arm64-msvc': 1.7.3
-      '@farmfe/core-win32-ia32-msvc': 1.7.3
-      '@farmfe/core-win32-x64-msvc': 1.7.3
+      '@farmfe/core-darwin-arm64': 1.7.4
+      '@farmfe/core-darwin-x64': 1.7.4
+      '@farmfe/core-linux-arm64-gnu': 1.7.4
+      '@farmfe/core-linux-arm64-musl': 1.7.4
+      '@farmfe/core-linux-x64-gnu': 1.7.4
+      '@farmfe/core-linux-x64-musl': 1.7.4
+      '@farmfe/core-win32-arm64-msvc': 1.7.4
+      '@farmfe/core-win32-ia32-msvc': 1.7.4
+      '@farmfe/core-win32-x64-msvc': 1.7.4
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
 
-  '@farmfe/js-plugin-solid@2.12.0(@farmfe/core@1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)':
+  '@farmfe/js-plugin-solid@2.12.0(@farmfe/core@1.7.4(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.5)':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.10)
-      '@farmfe/core': 1.7.3(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
+      '@farmfe/core': 1.7.4(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac)
       '@rollup/pluginutils': 5.1.4(rollup@4.36.0)
       babel-preset-solid: 1.9.5(@babel/core@7.26.10)
       merge-anything: 5.1.7
@@ -2584,8 +2584,8 @@ snapshots:
 
   browserslist@4.24.4:
     dependencies:
-      caniuse-lite: 1.0.30001713
-      electron-to-chromium: 1.5.136
+      caniuse-lite: 1.0.30001715
+      electron-to-chromium: 1.5.139
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -2612,7 +2612,7 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
 
-  caniuse-lite@1.0.30001713: {}
+  caniuse-lite@1.0.30001715: {}
 
   ccount@2.0.1: {}
 
@@ -2727,7 +2727,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.136: {}
+  electron-to-chromium@1.5.139: {}
 
   emoji-regex-xs@1.0.0: {}
 
@@ -2797,7 +2797,7 @@ snapshots:
       '@types/semver': 7.7.0
       '@types/ua-parser-js': 0.7.39
       browserslist: 4.24.4
-      caniuse-lite: 1.0.30001713
+      caniuse-lite: 1.0.30001715
       isbot: 3.8.0
       object-path: 0.11.8
       semver: 7.7.1
@@ -2832,7 +2832,7 @@ snapshots:
 
   farm-plugin-replace-dirname@0.2.1:
     dependencies:
-      '@changesets/cli': 2.28.1
+      '@changesets/cli': 2.29.2
       '@farmfe/utils': 0.0.1
       cac: 6.7.14
     optionalDependencies:
@@ -3608,10 +3608,10 @@ snapshots:
 
   ylru@1.4.0: {}
 
-  zod-validation-error@1.5.0(zod@3.24.2):
+  zod-validation-error@1.5.0(zod@3.24.3):
     dependencies:
-      zod: 3.24.2
+      zod: 3.24.3
 
-  zod@3.24.2: {}
+  zod@3.24.3: {}
 
   zwitch@2.0.4: {}
