@@ -30,7 +30,7 @@ importers:
         version: 0.0.12
       '@shikijs/twoslash':
         specifier: ^3.2.1
-        version: 3.4.2(typescript@5.8.3)
+        version: 3.6.0(typescript@5.8.3)
       '@solidjs/router':
         specifier: ^0.15.3
         version: 0.15.3(patch_hash=5337b07910f94c4c851d2042963623dac6638d17eccaeb9b1d116ee093e904e0)(solid-js@1.9.7)
@@ -590,9 +590,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@3.4.2':
-    resolution: {integrity: sha512-AG8vnSi1W2pbgR2B911EfGqtLE9c4hQBYkv/x7Z+Kt0VxhgQKcW7UNDVYsu9YxwV6u+OJrvdJrMq6DNWoBjihQ==}
-
   '@shikijs/core@3.6.0':
     resolution: {integrity: sha512-9By7Xb3olEX0o6UeJyPLI1PE1scC4d3wcVepvtv2xbuN9/IThYN4Wcwh24rcFeASzPam11MCq8yQpwwzCgSBRw==}
 
@@ -608,13 +605,10 @@ packages:
   '@shikijs/themes@3.6.0':
     resolution: {integrity: sha512-Fq2j4nWr1DF4drvmhqKq8x5vVQ27VncF8XZMBuHuQMZvUSS3NBgpqfwz/FoGe36+W6PvniZ1yDlg2d4kmYDU6w==}
 
-  '@shikijs/twoslash@3.4.2':
-    resolution: {integrity: sha512-zRNPmi2lA8o+k7UQfmbPwH2jPvfW9OrgpsO4OUOM+8QTxrepFU9TNF8vNcxZEW5cbishQkJrV19cI9Zk3cb5aQ==}
+  '@shikijs/twoslash@3.6.0':
+    resolution: {integrity: sha512-AxRxLWtmrVftwxN/2hSL6Hym+bannS+zuUEXpbNuo6BpG4jHTM0KEkICEH3B3Gm5ZNzGdI74NdDiAqAZ6WPJuQ==}
     peerDependencies:
       typescript: '>=5.5.0'
-
-  '@shikijs/types@3.4.2':
-    resolution: {integrity: sha512-zHC1l7L+eQlDXLnxvM9R91Efh2V4+rN3oMVS2swCBssbj2U/FBwybD1eeLaq8yl/iwT+zih8iUbTBCgGZOYlVg==}
 
   '@shikijs/types@3.6.0':
     resolution: {integrity: sha512-cLWFiToxYu0aAzJqhXTQsFiJRTFDAGl93IrMSBNaGSzs7ixkLfdG6pH11HipuWFGW5vyx4X47W8HDQ7eSrmBUg==}
@@ -2459,13 +2453,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.36.0':
     optional: true
 
-  '@shikijs/core@3.4.2':
-    dependencies:
-      '@shikijs/types': 3.4.2
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
-      hast-util-to-html: 9.0.5
-
   '@shikijs/core@3.6.0':
     dependencies:
       '@shikijs/types': 3.6.0
@@ -2492,19 +2479,14 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.6.0
 
-  '@shikijs/twoslash@3.4.2(typescript@5.8.3)':
+  '@shikijs/twoslash@3.6.0(typescript@5.8.3)':
     dependencies:
-      '@shikijs/core': 3.4.2
-      '@shikijs/types': 3.4.2
+      '@shikijs/core': 3.6.0
+      '@shikijs/types': 3.6.0
       twoslash: 0.3.1(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
-
-  '@shikijs/types@3.4.2':
-    dependencies:
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
 
   '@shikijs/types@3.6.0':
     dependencies:
