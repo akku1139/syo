@@ -35,8 +35,8 @@ importers:
         specifier: ^0.15.3
         version: 0.15.3(patch_hash=5337b07910f94c4c851d2042963623dac6638d17eccaeb9b1d116ee093e904e0)(solid-js@1.9.7)
       marked:
-        specifier: ^15.0.7
-        version: 15.0.12
+        specifier: ^16.0.0
+        version: 16.0.0
       shiki:
         specifier: ^3.2.1
         version: 3.7.0
@@ -1322,9 +1322,9 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  marked@15.0.12:
-    resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
-    engines: {node: '>= 18'}
+  marked@16.0.0:
+    resolution: {integrity: sha512-MUKMXDjsD/eptB7GPzxo4xcnLS6oo7/RHimUMHEDRhUooPwmN9BEpMl7AEOJv3bmso169wHI2wUF9VQgL7zfmA==}
+    engines: {node: '>= 20'}
     hasBin: true
 
   math-intrinsics@1.1.0:
@@ -3200,7 +3200,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  marked@15.0.12: {}
+  marked@16.0.0: {}
 
   math-intrinsics@1.1.0: {}
 
