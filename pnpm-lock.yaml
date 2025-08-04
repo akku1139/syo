@@ -30,7 +30,7 @@ importers:
         version: 0.0.12
       '@shikijs/twoslash':
         specifier: ^3.2.1
-        version: 3.8.1(typescript@5.8.3)
+        version: 3.9.1(typescript@5.8.3)
       '@solidjs/router':
         specifier: ^0.15.3
         version: 0.15.3(patch_hash=5337b07910f94c4c851d2042963623dac6638d17eccaeb9b1d116ee093e904e0)(solid-js@1.9.7)
@@ -590,9 +590,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@3.8.1':
-    resolution: {integrity: sha512-uTSXzUBQ/IgFcUa6gmGShCHr4tMdR3pxUiiWKDm8pd42UKJdYhkAYsAmHX5mTwybQ5VyGDgTjW4qKSsRvGSang==}
-
   '@shikijs/core@3.9.1':
     resolution: {integrity: sha512-W5Vwen0KJCtR7KFRo+3JLGAqLUPsfW7e+wZ4yaRBGIogwI9ZlnkpRm9ZV8JtfzMxOkIwZwMmmN0hNErLtm3AYg==}
 
@@ -608,13 +605,10 @@ packages:
   '@shikijs/themes@3.9.1':
     resolution: {integrity: sha512-zAykkGECNICCMXpKeVvq04yqwaSuAIvrf8MjsU5bzskfg4XreU+O0B5wdNCYRixoB9snd3YlZ373WV5E/g5T9A==}
 
-  '@shikijs/twoslash@3.8.1':
-    resolution: {integrity: sha512-Y6hF8cA0fS5w8iIPC20pLgVABfzwkWeQ8hca9h2XaZvdCR0R121JDr+HmjJ6lc9l8MyCOww+k9HK+QUbH6CCag==}
+  '@shikijs/twoslash@3.9.1':
+    resolution: {integrity: sha512-1LT/7lOmJXDBe9nOSH7UweUMNWSvCHGGi122aZ77/Ctug6XbCL/9FY+Oh0ggWWgig/gpdXpHyTWGNQuzPbAUGQ==}
     peerDependencies:
       typescript: '>=5.5.0'
-
-  '@shikijs/types@3.8.1':
-    resolution: {integrity: sha512-5C39Q8/8r1I26suLh+5TPk1DTrbY/kn3IdWA5HdizR0FhlhD05zx5nKCqhzSfDHH3p4S0ZefxWd77DLV+8FhGg==}
 
   '@shikijs/types@3.9.1':
     resolution: {integrity: sha512-rqM3T7a0iM1oPKz9iaH/cVgNX9Vz1HERcUcXJ94/fulgVdwqfnhXzGxO4bLrAnh/o5CPLy3IcYedogfV+Ns0Qg==}
@@ -1706,11 +1700,11 @@ packages:
     resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}
     engines: {node: '>=0.6.x'}
 
-  twoslash-protocol@0.3.2:
-    resolution: {integrity: sha512-lWIL1dGcMr7cywSLSn8ufCoeyPab3bIwPE6DmAlQYQSMjJUgzzRvSz/LsQ179eNJafRghYDlIgF2v7pmsjV3Ww==}
+  twoslash-protocol@0.3.3:
+    resolution: {integrity: sha512-26NXjXEj+2NgytwOjjhFtNpQI7Zgct6PTyLg6JO7fIbO7MIm+kx89IxvBustgBOSKxoWjNBN2LXjNHHMD7+k0g==}
 
-  twoslash@0.3.2:
-    resolution: {integrity: sha512-TB+ja888uMKhbng8HzpTHm+JfxIWbngIHPy4nKEt2N93MFjpqmkqn8ppnPhIKj4kDnrohEsiogMF7T1gMY06rw==}
+  twoslash@0.3.3:
+    resolution: {integrity: sha512-Yen1RBSYh/NUR6tfK6xT7DsXkBYby7lfp078Q7XoJR5dtAeG9jB5PVL1oF2sZwHapLjaqcZNlw7GSB8himZNsQ==}
     peerDependencies:
       typescript: ^5.5.0
 
@@ -2459,13 +2453,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.36.0':
     optional: true
 
-  '@shikijs/core@3.8.1':
-    dependencies:
-      '@shikijs/types': 3.8.1
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
-      hast-util-to-html: 9.0.5
-
   '@shikijs/core@3.9.1':
     dependencies:
       '@shikijs/types': 3.9.1
@@ -2492,19 +2479,14 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.9.1
 
-  '@shikijs/twoslash@3.8.1(typescript@5.8.3)':
+  '@shikijs/twoslash@3.9.1(typescript@5.8.3)':
     dependencies:
-      '@shikijs/core': 3.8.1
-      '@shikijs/types': 3.8.1
-      twoslash: 0.3.2(typescript@5.8.3)
+      '@shikijs/core': 3.9.1
+      '@shikijs/types': 3.9.1
+      twoslash: 0.3.3(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
-
-  '@shikijs/types@3.8.1':
-    dependencies:
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
 
   '@shikijs/types@3.9.1':
     dependencies:
@@ -3557,12 +3539,12 @@ snapshots:
 
   tsscmp@1.0.6: {}
 
-  twoslash-protocol@0.3.2: {}
+  twoslash-protocol@0.3.3: {}
 
-  twoslash@0.3.2(typescript@5.8.3):
+  twoslash@0.3.3(typescript@5.8.3):
     dependencies:
       '@typescript/vfs': 1.6.1(typescript@5.8.3)
-      twoslash-protocol: 0.3.2
+      twoslash-protocol: 0.3.3
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
