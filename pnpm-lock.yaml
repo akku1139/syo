@@ -30,7 +30,7 @@ importers:
         version: 0.0.12
       '@shikijs/twoslash':
         specifier: ^3.2.1
-        version: 3.11.0(typescript@5.9.2)
+        version: 3.12.0(typescript@5.9.2)
       '@solidjs/router':
         specifier: ^0.15.3
         version: 0.15.3(patch_hash=5337b07910f94c4c851d2042963623dac6638d17eccaeb9b1d116ee093e904e0)(solid-js@1.9.9)
@@ -593,8 +593,8 @@ packages:
   '@shikijs/core@3.11.0':
     resolution: {integrity: sha512-oJwU+DxGqp6lUZpvtQgVOXNZcVsirN76tihOLBmwILkKuRuwHteApP8oTXmL4tF5vS5FbOY0+8seXmiCoslk4g==}
 
-  '@shikijs/core@3.9.2':
-    resolution: {integrity: sha512-3q/mzmw09B2B6PgFNeiaN8pkNOixWS726IHmJEpjDAcneDPMQmUg2cweT9cWXY4XcyQS3i6mOOUgQz9RRUP6HA==}
+  '@shikijs/core@3.12.0':
+    resolution: {integrity: sha512-rPfCBd6gHIKBPpf2hKKWn2ISPSrmRKAFi+bYDjvZHpzs3zlksWvEwaF3Z4jnvW+xHxSRef7qDooIJkY0RpA9EA==}
 
   '@shikijs/engine-javascript@3.11.0':
     resolution: {integrity: sha512-6/ov6pxrSvew13k9ztIOnSBOytXeKs5kfIR7vbhdtVRg+KPzvp2HctYGeWkqv7V6YIoLicnig/QF3iajqyElZA==}
@@ -608,16 +608,16 @@ packages:
   '@shikijs/themes@3.11.0':
     resolution: {integrity: sha512-BhhWRzCTEk2CtWt4S4bgsOqPJRkapvxdsifAwqP+6mk5uxboAQchc0etiJ0iIasxnMsb764qGD24DK9albcU9Q==}
 
-  '@shikijs/twoslash@3.11.0':
-    resolution: {integrity: sha512-/mYrydaKDr5vwlgFbcaGOvYHds3oceIpru4eVWVvScOC6XbWx9lbYCVhyGtlgHlF1m5rZkAR6sdNAPKeDGKOAw==}
+  '@shikijs/twoslash@3.12.0':
+    resolution: {integrity: sha512-gO8u8ZYs7MginBaIFZf4nDX46gZZNcbtLwjy4bdPxw/uG6GKAWhvLSh5jMLnjA+7++K3UpuylAe+vqF9doAJgA==}
     peerDependencies:
       typescript: '>=5.5.0'
 
   '@shikijs/types@3.11.0':
     resolution: {integrity: sha512-RB7IMo2E7NZHyfkqAuaf4CofyY8bPzjWPjJRzn6SEak3b46fIQyG6Vx5fG/obqkfppQ+g8vEsiD7Uc6lqQt32Q==}
 
-  '@shikijs/types@3.9.2':
-    resolution: {integrity: sha512-/M5L0Uc2ljyn2jKvj4Yiah7ow/W+DJSglVafvWAJ/b8AZDeeRAdMu3c2riDzB7N42VD+jSnWxeP9AKtd4TfYVw==}
+  '@shikijs/types@3.12.0':
+    resolution: {integrity: sha512-jsFzm8hCeTINC3OCmTZdhR9DOl/foJWplH2Px0bTi4m8z59fnsueLsweX82oGcjRQ7mfQAluQYKGoH2VzsWY4A==}
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
@@ -2466,9 +2466,9 @@ snapshots:
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
-  '@shikijs/core@3.9.2':
+  '@shikijs/core@3.12.0':
     dependencies:
-      '@shikijs/types': 3.9.2
+      '@shikijs/types': 3.12.0
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
@@ -2492,10 +2492,10 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.11.0
 
-  '@shikijs/twoslash@3.11.0(typescript@5.9.2)':
+  '@shikijs/twoslash@3.12.0(typescript@5.9.2)':
     dependencies:
-      '@shikijs/core': 3.11.0
-      '@shikijs/types': 3.11.0
+      '@shikijs/core': 3.12.0
+      '@shikijs/types': 3.12.0
       twoslash: 0.3.4(typescript@5.9.2)
       typescript: 5.9.2
     transitivePeerDependencies:
@@ -2506,7 +2506,7 @@ snapshots:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
 
-  '@shikijs/types@3.9.2':
+  '@shikijs/types@3.12.0':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
