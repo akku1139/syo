@@ -23,8 +23,8 @@ importers:
         specifier: ^2.12.0
         version: 2.12.0(@farmfe/core@1.7.11(patch_hash=debed6f733fcf384810968f3deff635316d2c4a1d03bf55448270ede92d754ac))(rollup@4.36.0)(solid-js@1.9.9)
       '@farmfe/plugin-mdx':
-        specifier: ^0.0.7
-        version: 0.0.7
+        specifier: ^0.1.0
+        version: 0.1.0
       '@farmfe/plugin-virtual':
         specifier: ^0.0.12
         version: 0.0.12
@@ -314,62 +314,62 @@ packages:
     peerDependencies:
       '@farmfe/core': ^1.7.0
 
-  '@farmfe/plugin-mdx-darwin-arm64@0.0.7':
-    resolution: {integrity: sha512-kxqHSMPG+8sU5gNGQFDXBvkCke0YuzpOfrscgkeO998SK1H9nL66rBtnOImOKj/W3bFJJI9T9pNxit74OCCd9Q==}
+  '@farmfe/plugin-mdx-darwin-arm64@0.1.0':
+    resolution: {integrity: sha512-TUMvhpmdKeVMqPyWk1BbW51zQo4XHGQzazhLrfWVab1tfDUUh36zV4z463TUBubS9fXAINCzgbx093LHoV2S0Q==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@farmfe/plugin-mdx-darwin-x64@0.0.7':
-    resolution: {integrity: sha512-VCWzmEkvKsB36xwZxue3EC+b4oPIhHPtf+lkG7qbvuq3+llm7DgrjVolmF9UgbqbDhFcCeb0tBMa8yZvKyGHuQ==}
+  '@farmfe/plugin-mdx-darwin-x64@0.1.0':
+    resolution: {integrity: sha512-ZM7wDGlo5gCrvMiten7BPuNBKYIv7J9vnSwXhGKT6codesORs2bHoS88TBht/EzAosXcGe0Dhec4GgKY+N+Zzg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@farmfe/plugin-mdx-linux-arm64-gnu@0.0.7':
-    resolution: {integrity: sha512-iVRyPQp+aMAMotA/TQN7T+5QjiTit3sfLREnaBq9N3yChXBNtrtZR1v7VRmUnSoWcwg50Amv0/tUuSsiUiMd8w==}
+  '@farmfe/plugin-mdx-linux-arm64-gnu@0.1.0':
+    resolution: {integrity: sha512-1etltM6LAeXxmwGWdi25/MTizO9Q5jRvMrD/vmyMAGEJ+RJX/bEmw7dGtT4F/EQMM71lM6tEJ0kCfJ/WQlUWVw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/plugin-mdx-linux-arm64-musl@0.0.7':
-    resolution: {integrity: sha512-Kq7K1DCw0EB3n3pWzEKGl4JSdTMLZxZs2bdG9zGv9h9zuy5BopQR05vl2GeaJXbrCF2GGeDIce/J94v5yc2mWg==}
+  '@farmfe/plugin-mdx-linux-arm64-musl@0.1.0':
+    resolution: {integrity: sha512-qee8SNtkuoIREuyz679OGrVOVdwkj8mQmHnSVwWQSF3WaVq4HaBEA3uh8csWQwz3gBTs6PTetlgc2p1Mw7flWQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@farmfe/plugin-mdx-linux-x64-gnu@0.0.7':
-    resolution: {integrity: sha512-ud7Gz9UID2ShBkU/kO/I5DdTC0/nsa4YOIT7CGoZBeeWTyY1nDYUEQLPn3HuacfzKBbVKFTv2JrbDMm36V+ebg==}
+  '@farmfe/plugin-mdx-linux-x64-gnu@0.1.0':
+    resolution: {integrity: sha512-Z0rcr4uMBfO/sAR62R+Y15Tc89fNmujK0aXDXhJ+MFl7ikF1zd8skyKi8gbZbKhH0yPWRddJ9KR8H7Nn62VV7g==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/plugin-mdx-linux-x64-musl@0.0.7':
-    resolution: {integrity: sha512-h4GcEYw870ZeXacbJ0CrXCuAskO5/nMEjV5vRcIwc8+BDGa6MQ9bNgrhyLKXQiw+MaHMnQKYC31Ov7vfqSCN6w==}
+  '@farmfe/plugin-mdx-linux-x64-musl@0.1.0':
+    resolution: {integrity: sha512-pndX1N4humj5yIpoxSilvd8+r+eCAwotEVYaVvuu46Ildaub02fSvmxsOgIb+Iu8tk+OqHHGMXNV7TB8xDqnZQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@farmfe/plugin-mdx-win32-arm64-msvc@0.0.7':
-    resolution: {integrity: sha512-VSkB/aOq41ruak6QUV6NpatZzEl1Ll3+4an3GX1kVk3cKpwRgWAmybCTYjne14if9VYyBI3PHZ3wAVMCefaGrw==}
+  '@farmfe/plugin-mdx-win32-arm64-msvc@0.1.0':
+    resolution: {integrity: sha512-ONHjVRPHl3+DElAKb9FlR6503hYrSlw8lk1WNpKUIUVyYvMFZXwRE1+iia4Tq6nln0Ja2RYD4qPhzQuiGGV7hw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@farmfe/plugin-mdx-win32-ia32-msvc@0.0.7':
-    resolution: {integrity: sha512-fHsPMdJfqsk/HGXnmxTIIAJro+EtfL5p0HGNONmmqjJvI26RZ4uvFWPBbIDO3UGq5t92euLmqmyDWNrdWLhqkw==}
+  '@farmfe/plugin-mdx-win32-ia32-msvc@0.1.0':
+    resolution: {integrity: sha512-p2EkKWvLjSsOsC2WjUm4as5mwwBjjXiJBvFswDeCYUJYw4Pcpl3YKDzPkWJUKgVtMBJklS0pHxnk6PdDH9XINQ==}
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
 
-  '@farmfe/plugin-mdx-win32-x64-msvc@0.0.7':
-    resolution: {integrity: sha512-42VY0EseklkQxEV6MSn9kZNyfBJrNlkg6VEwGzymd2bum5bUAGtQo1ycfRV+fe5/fsEPUV8pcAKXepb6utH2Fw==}
+  '@farmfe/plugin-mdx-win32-x64-msvc@0.1.0':
+    resolution: {integrity: sha512-BcPs4kI6dOFxyfK4upiBZ0dk3T8HNX3dgaY4tERKv88M3+pycwgq8c3daVwVNUCJ/oDisNw+pGl7m2Np6MnxNg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@farmfe/plugin-mdx@0.0.7':
-    resolution: {integrity: sha512-eKsh7q2QEsG7k+zvkxoptNlkld/qmfFfXfhU3+dN4o5PwYIhXVPSTkMicrhdWGD5sMjA420HMjXk69nUop+xAQ==}
+  '@farmfe/plugin-mdx@0.1.0':
+    resolution: {integrity: sha512-O4J9FsDhpyZLeAkvveMCJjwgJ8McGhlg8bKcEXYllJMfGwMQtjWwppCiWpSJGSgCFK9JOfgzUjcyklPFyE0iQg==}
 
   '@farmfe/plugin-virtual-darwin-arm64@0.0.12':
     resolution: {integrity: sha512-KVaZnMN0PycJnP0qNVNjzmZDVtyj3NqEAu+U9vEcGZ5Rb9HPIF616iIW9KhfKSkdOs5RUaDwwFxSKhxJgQWqtA==}
@@ -2243,44 +2243,44 @@ snapshots:
       - solid-js
       - supports-color
 
-  '@farmfe/plugin-mdx-darwin-arm64@0.0.7':
+  '@farmfe/plugin-mdx-darwin-arm64@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-darwin-x64@0.0.7':
+  '@farmfe/plugin-mdx-darwin-x64@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-linux-arm64-gnu@0.0.7':
+  '@farmfe/plugin-mdx-linux-arm64-gnu@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-linux-arm64-musl@0.0.7':
+  '@farmfe/plugin-mdx-linux-arm64-musl@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-linux-x64-gnu@0.0.7':
+  '@farmfe/plugin-mdx-linux-x64-gnu@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-linux-x64-musl@0.0.7':
+  '@farmfe/plugin-mdx-linux-x64-musl@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-win32-arm64-msvc@0.0.7':
+  '@farmfe/plugin-mdx-win32-arm64-msvc@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-win32-ia32-msvc@0.0.7':
+  '@farmfe/plugin-mdx-win32-ia32-msvc@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx-win32-x64-msvc@0.0.7':
+  '@farmfe/plugin-mdx-win32-x64-msvc@0.1.0':
     optional: true
 
-  '@farmfe/plugin-mdx@0.0.7':
+  '@farmfe/plugin-mdx@0.1.0':
     optionalDependencies:
-      '@farmfe/plugin-mdx-darwin-arm64': 0.0.7
-      '@farmfe/plugin-mdx-darwin-x64': 0.0.7
-      '@farmfe/plugin-mdx-linux-arm64-gnu': 0.0.7
-      '@farmfe/plugin-mdx-linux-arm64-musl': 0.0.7
-      '@farmfe/plugin-mdx-linux-x64-gnu': 0.0.7
-      '@farmfe/plugin-mdx-linux-x64-musl': 0.0.7
-      '@farmfe/plugin-mdx-win32-arm64-msvc': 0.0.7
-      '@farmfe/plugin-mdx-win32-ia32-msvc': 0.0.7
-      '@farmfe/plugin-mdx-win32-x64-msvc': 0.0.7
+      '@farmfe/plugin-mdx-darwin-arm64': 0.1.0
+      '@farmfe/plugin-mdx-darwin-x64': 0.1.0
+      '@farmfe/plugin-mdx-linux-arm64-gnu': 0.1.0
+      '@farmfe/plugin-mdx-linux-arm64-musl': 0.1.0
+      '@farmfe/plugin-mdx-linux-x64-gnu': 0.1.0
+      '@farmfe/plugin-mdx-linux-x64-musl': 0.1.0
+      '@farmfe/plugin-mdx-win32-arm64-msvc': 0.1.0
+      '@farmfe/plugin-mdx-win32-ia32-msvc': 0.1.0
+      '@farmfe/plugin-mdx-win32-x64-msvc': 0.1.0
 
   '@farmfe/plugin-virtual-darwin-arm64@0.0.12':
     optional: true
